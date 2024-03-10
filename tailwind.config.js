@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         fragment: ["Fragment", "sans-serif"],
+        chivo: ["Chivo", "sans-serif"],
+        major: ["Major Mono Display", "sans-serif"],
       },
     },
   },

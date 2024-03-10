@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./sections/Header";
+import Projects from "./sections/Projects";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <Header />
       </header>
       <main>
-        <section></section>
+        <Projects />
         {/* <section>
           <h1>Skills</h1>
         </section>
