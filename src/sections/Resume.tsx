@@ -1,17 +1,4 @@
-import React from "react";
-import gsap from "gsap";
-
 const Resume = () => {
-  React.useEffect(() => {
-    gsap.to("#resume", {
-      borderRadius: 40,
-      scrollTrigger: {
-        trigger: "#resume",
-        start: "top center",
-        scrub: true,
-      },
-    });
-  }, []);
   return (
     <div
       id="resume"
