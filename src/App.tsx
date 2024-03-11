@@ -7,7 +7,7 @@ import Techstack from "./sections/Techstack";
 function App() {
   return (
     <>
-      <header>
+      <header className="relative">
         <Header />
       </header>
       <main className="relative">
