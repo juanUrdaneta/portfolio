@@ -1,11 +1,27 @@
+import React from "react";
+import gsap from "gsap";
+
 const Projects = () => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (ref.current) {
+      gsap.to("#last-project", {
+        scale: 0.9,
+        opacity: 0.4,
+        scrollTrigger: {
+          trigger: "#last-project",
+          start: "top top",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
+
   return (
     <>
       <div className="w-screen flex flex-col justify-center items-center min-h-screen relative z-[5] bg-[#202020] ">
         <section className="w-full max-w-[1200px] my-2 pt-20 ">
-          {/* <h2 className="font-fragment text-teal-400 text-4xl w-full text-center">
-          Past work
-        </h2> */}
           <div className="flex justify-center w-full flex-col md:flex-row ">
             <div className="flex justify-center items-center flex-col w-1/2">
               <p className="text-white">Shortbread.ai</p>
@@ -44,8 +60,14 @@ const Projects = () => {
           </div>
         </section>
       </div>
-      <div className="w-screen flex flex-col justify-center items-center z-10 sticky top-0 mt-[-1px] bg-[#202020]">
-        <section className="w-full max-w-[1200px] mb-2 mt-20 pb-20">
+      <div
+        className="w-screen flex flex-col justify-center items-center z-10 sticky top-0 mt-[-1px] bg-[#202020]"
+        ref={ref}
+      >
+        <section
+          id="last-project"
+          className="w-full max-w-[1200px] mb-2 mt-20 pb-20"
+        >
           <div className="flex justify-center w-full flex-col md:flex-row-reverse  ">
             <div className="flex justify-center items-center flex-col w-1/2">
               <p className="text-white">Mesa Premium</p>
