@@ -1,6 +1,8 @@
 import "./App.css";
 import Header from "./sections/Header";
 import Projects from "./sections/Projects";
+import Resume from "./sections/Resume";
+import Techstack from "./sections/Techstack";
 
 function App() {
   return (
@@ -8,14 +10,10 @@ function App() {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="relative">
         <Projects />
-        {/* <section>
-          <h1>Skills</h1>
-        </section>
-        <section>
-          <h1>About me</h1>
-        </section> */}
+        <Techstack />
+        <Resume />
       </main>
       <footer></footer>
     </>
