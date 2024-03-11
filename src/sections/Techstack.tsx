@@ -8,7 +8,7 @@ const Techstack = () => {
       opacity: 0.4,
       scrollTrigger: {
         trigger: "#techstack",
-        start: "top top",
+        start: () => "top top+=" + window.innerHeight / 2, // Adjust the trigger point
         scrub: true,
       },
     });
