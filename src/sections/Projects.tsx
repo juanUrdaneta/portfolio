@@ -20,21 +20,21 @@ const Projects = () => {
 
   return (
     <>
-      <div className="w-screen flex flex-col justify-center items-center min-h-screen relative z-[5] bg-[#202020] ">
-        <section className="w-full max-w-[1200px] my-2 pt-20 ">
-          <div className="flex justify-center w-full flex-col md:flex-row ">
-            <div className="flex justify-center items-center flex-col w-1/2">
+      <div className="relative z-[5] flex min-h-screen w-screen flex-col items-center justify-center bg-[#202020] ">
+        <article className="my-2 w-full max-w-[1200px] pt-20 ">
+          <div className="flex w-full h-full flex-col justify-center md:flex-row ">
+            <div className="flex w-1/2 flex-col items-center justify-center">
               <p className="text-white">Shortbread.ai</p>
               <p className="text-white">comic editor</p>
             </div>
             <img
               src="shortbread.webp"
-              className=" w-[600px] h-auto max-w-3/4"
+              className=" max-w-3/4 h-auto w-[600px]"
             />
           </div>
           <div className="mb-20"></div>
-          <div className="flex justify-center w-full flex-col md:flex-row-reverse ">
-            <div className="flex justify-center items-center flex-col w-1/2">
+          <div className="flex w-full h-full flex-col justify-center md:flex-row-reverse ">
+            <div className="flex w-1/2 flex-col items-center justify-center">
               <p className="text-white">Incept</p>
               <p className="text-white">Front End Landing page collab</p>
             </div>
@@ -46,8 +46,8 @@ const Projects = () => {
             />
           </div>
           <div className="mb-20"></div>
-          <div className="flex justify-center w-full flex-col md:flex-row ">
-            <div className="flex justify-center items-center flex-col w-1/2">
+          <div className="flex w-full h-full flex-col justify-center md:flex-row ">
+            <div className="flex w-1/2 flex-col items-center justify-center">
               <p className="text-white">Crowdsourced shopping list app</p>
               <p className="text-white">
                 Features for mass updating and cataloging products
@@ -55,21 +55,21 @@ const Projects = () => {
             </div>
             <img
               src="shortbread.webp"
-              className=" w-[600px] h-auto max-w-3/4"
+              className=" max-w-3/4 h-auto w-[600px]"
             />
           </div>
-        </section>
+        </article>
       </div>
       <div
-        className="w-screen flex flex-col justify-center items-center z-10 sticky top-0 mt-[-1px] bg-[#202020]"
+        className="sticky top-0 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-[#202020]"
         ref={ref}
       >
-        <section
+        <article
           id="last-project"
-          className="w-full max-w-[1200px] mb-2 mt-20 pb-20"
+          className="mb-2 mt-20 w-full max-w-[1200px] pb-20"
         >
-          <div className="flex justify-center w-full flex-col md:flex-row-reverse  ">
-            <div className="flex justify-center items-center flex-col w-1/2">
+          <div className="flex w-full flex-col justify-center md:flex-row-reverse  ">
+            <div className="flex w-1/2 flex-col items-center justify-center">
               <p className="text-white">Mesa Premium</p>
               <p className="text-white">
                 Yet to release restaurant bookings app
@@ -82,7 +82,7 @@ const Projects = () => {
               className="max-w-3/4"
             />
           </div>
-        </section>
+        </article>
       </div>
     </>
   );

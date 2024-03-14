@@ -5,10 +5,10 @@ const Techstack = () => {
   React.useEffect(() => {
     gsap.to("#innerTechstack", {
       scale: 0.9,
-      opacity: 0.4,
+      opacity: 0.6,
       scrollTrigger: {
         trigger: "#techstack",
-        start: () => "top top-=" + window.innerHeight / 2, // Adjust the trigger point
+        start: "top top",
         scrub: true,
       },
     });
