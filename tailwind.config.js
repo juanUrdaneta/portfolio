@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "white-bone": "#F9F6EE",
-        "black-soft": "#202020",
+        "black-soft": "#141516",
       },
       fontFamily: {
         fragment: ["Fragment", "sans-serif"],
