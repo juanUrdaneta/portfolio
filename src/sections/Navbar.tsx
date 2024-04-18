@@ -34,15 +34,15 @@ const Navbar = () => {
       className="w-screen h-24 sticky top-0 z-50 mt-[-1px] flex justify-center backdrop-brightness-50 border-b border-b-black-soft "
     >
       <nav className="flex justify-between items-center w-[1200px] max-w-[1200px]">
-        <p className="text-white-bone text-3xl">Juan Urdaneta</p>
+        <p className="text-white-bone text-3xl font-general font-light">Juan Urdaneta</p>
         <ul className="flex justify-between text-white-bone w-[160px] ">
           <li className="">
-            <a href="#projects" className="text-white-bone">
+            <a href="#projects" className="text-white-bone font-general font-light">
               Projects
             </a>
           </li>
           <li className="">
-            <a href="#resume" className="text-white-bone">
+            <a href="#resume" className="text-white-bone font-general font-light">
               Contact
             </a>
           </li>

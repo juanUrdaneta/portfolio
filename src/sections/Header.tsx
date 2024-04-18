@@ -15,12 +15,9 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      className="w-screen h-[800px] flex flex-col justify-end "
-      style={{ background: "linear-gradient(180deg, #404040, #141516)" }}
-    >
+    <div className="w-screen h-[800px] flex flex-col justify-end bg-black-soft ">
       <section id="name-box" className=" w-full flex flex-col justify-end items-end">
-        <h1 className="text-left md:text-center font-general font-light text-6xl md:text-[200px] select-none text-emerald-400 font-regular px-8">
+        <h1 className="text-left md:text-center font-general font-thin text-6xl md:text-[200px] select-none text-emerald-400 font-regular px-8">
           Juan Urdaneta
         </h1>
         <div className=" h-fit p-2 flex justify-center items-center mt-12 rounded-2xl">
