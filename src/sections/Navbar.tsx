@@ -31,7 +31,7 @@ const Navbar = () => {
     <div
       id="navbar"
       // style={{ backgroundColor: "#141516" }}
-      className="w-screen h-16 sticky top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-sm border-b border-b-black-soft "
+      className="w-screen h-24 sticky top-0 z-50 mt-[-1px] flex justify-center backdrop-brightness-50 border-b border-b-black-soft "
     >
       <nav className="flex justify-between items-center w-[1200px] max-w-[1200px]">
         <p className="text-white-bone text-3xl">Juan Urdaneta</p>

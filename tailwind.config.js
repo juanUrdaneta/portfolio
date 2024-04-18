@@ -11,6 +11,7 @@ export default {
         fragment: ["Fragment", "sans-serif"],
         chivo: ["Chivo", "sans-serif"],
         major: ["Major Mono Display", "sans-serif"],
+        general: ["General", "sans-serif"],
       },
     },
   },
