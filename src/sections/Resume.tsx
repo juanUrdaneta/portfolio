@@ -4,11 +4,12 @@ const Resume = () => {
       id="resume"
       className="w-screen flex justify-center min-h-screen bg-emerald-400 z-30 mt-[-1px] sticky top-0"
     >
-      <div className="flex  max-w-[1200px] w-full flex-col md:flex-row justify-start md:justify-center p-10 md:p-20 ">
+      <div className="flex  max-w-[1200px] w-full flex-col md:flex-row justify-start md:justify-center py-12 md:py-32 ">
         <div className="w-full md:w-1/2">
-          <p>Juan Urdaneta</p>
-          <a href="mailto:urdntjuan@gmail.com">
-            contact me: urdntjuan@gmail.com
+          {/* <p>Juan Urdaneta</p> */}
+          <a href="mailto:urdntjuan@gmail.com" className="flex items-end">
+            <p className="text-2xl mr-2">Contact me:</p>
+            <p>urdntjuan@gmail.com</p>
           </a>
         </div>
         <div className="w-full md:w-1/2">

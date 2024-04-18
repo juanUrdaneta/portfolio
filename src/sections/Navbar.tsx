@@ -17,18 +17,35 @@ const Navbar = () => {
       }
     );
   }, []);
+  React.useEffect(() => {
+    gsap.to("#navbar", {
+      backgroundColor: "#aa00aa",
+      scrollTrigger: {
+        trigger: "#resume",
+        start: "top top",
+        scrub: true,
+      },
+    });
+  }, []);
   return (
     <div
       id="navbar"
-      className="w-screen h-16 sticky top-0 z-10 mt-[-1px] bg-black-soft flex justify-center "
+      // style={{ backgroundColor: "#141516" }}
+      className="w-screen h-16 sticky top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-sm border-b border-b-black-soft "
     >
       <nav className="flex justify-between items-center w-[1200px] max-w-[1200px]">
-        <p className="text-white-bone">Juan Urdaneta</p>
+        <p className="text-white-bone text-3xl">Juan Urdaneta</p>
         <ul className="flex justify-between text-white-bone w-[160px] ">
-          <li>
-            <a href="#projects"></a>Projects
+          <li className="">
+            <a href="#projects" className="text-white-bone">
+              Projects
+            </a>
           </li>
-          <li>Contact</li>
+          <li className="">
+            <a href="#resume" className="text-white-bone">
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
