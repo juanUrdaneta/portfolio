@@ -1,4 +1,19 @@
+import gsap from "gsap";
+import React from "react";
+
 const Header = () => {
+  React.useEffect(() => {
+    gsap.to("#name-box", {
+      scale: 0.95,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#name-box",
+        start: "top top",
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
     <div
       className="w-screen h-[800px] flex flex-col justify-center items-center "
