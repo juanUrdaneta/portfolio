@@ -24,7 +24,7 @@ const Projects = () => {
         id="projects"
         className="relative z-[5] flex min-h-screen w-screen flex-col items-center justify-center bg-black-soft "
       >
-        <article className="my-2 w-full max-w-[1200px] pt-20 ">
+        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 ">
           <div className="flex w-full h-full flex-col justify-center md:flex-row ">
             <div className="flex w-1/2 flex-col items-center justify-center">
               <p className="text-white">Shortbread.ai</p>
@@ -97,7 +97,7 @@ const Projects = () => {
         </article>
       </div>
       <div
-        className="sticky top-0 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-black-soft"
+        className="sticky top-24 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-black-soft"
         ref={ref}
       >
         <article id="last-project" className="mb-2 mt-20 w-full max-w-[1200px] pb-20">
