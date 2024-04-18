@@ -24,7 +24,12 @@ const Resume = () => {
           </div>
           <div>
             <p>
-              <b>Crowedsourced shopping list app</b>
+              <b>Advanced grocery list app</b>
+            </p>
+          </div>
+          <div>
+            <p>
+              <b>Climatika - Web 3d app</b>
             </p>
           </div>
           <div>
