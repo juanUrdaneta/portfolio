@@ -21,8 +21,8 @@ const Header = () => {
           Juan Urdaneta
         </h1>
         <div className=" h-fit p-2 flex justify-center items-center mt-12 rounded-2xl">
-          <p className="font-chivo text-white-bone text-xl md:text-4xl font-bold select-none bg-transparent uppercase ">
-            Software developer
+          <p className=" text-white-bone text-xl md:text-4xl font-general font-bold select-none bg-transparent ">
+            Software Developer
           </p>
         </div>
       </section>

@@ -4,7 +4,7 @@ import gsap from "gsap";
 const Techstack = () => {
   React.useEffect(() => {
     gsap.to("#innerTechstack", {
-      scale: 0.9,
+      // scale: 0.9,
       opacity: 0.6,
       scrollTrigger: {
         trigger: "#techstack",
