@@ -19,10 +19,18 @@ const Navbar = () => {
     );
     gsap.to("#navbar", {
       scrollTrigger: {
+        trigger: "#projects",
+        start: "top center",
+        onEnter: () => {
+          setMobileNavTo("Contact");
+        },
+      },
+    });
+    gsap.to("#navbar", {
+      scrollTrigger: {
         trigger: "#resume",
         start: "top center",
         onEnter: () => {
-          console.log("enter contact");
           setMobileNavTo("Projects");
         },
       },
