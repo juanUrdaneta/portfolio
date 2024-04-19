@@ -84,12 +84,15 @@ const Project = (props: { name: string; text: string; imgSrc: string }) => {
     <>
       <div className="flex w-full h-full flex-col justify-center md:flex-row mt-20 ">
         <div className="flex w-1/2 flex-col items-center justify-center">
-          <p className="text-black-soft text-4xl italic">{props.name}</p>
+          <p className="text-black-soft font-chivo text-4xl italic">{props.name}</p>
           <div className="p-6">
             <p className="text-black-soft max-w-[500px] text-center italic text-sm">{props.text}</p>
           </div>
         </div>
-        <img src={props.imgSrc} className=" max-w-3/4 h-auto w-[600px] grayscale" />
+        <img
+          src={props.imgSrc}
+          className=" max-w-3/4 h-auto w-[600px]  grayscale hover:grayscale-0 transition-all duration-300"
+        />
       </div>
     </>
   );
