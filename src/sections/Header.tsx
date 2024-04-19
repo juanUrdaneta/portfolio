@@ -15,7 +15,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="w-screen h-[800px] flex flex-col justify-end bg-black-soft ">
+    <div className="w-screen h-[800px] max-h-[80vh] flex flex-col justify-end bg-black-soft ">
       <section id="name-box" className=" w-full flex flex-col justify-end items-end">
         <h1 className="text-left md:text-center font-general font-thin text-6xl md:text-[200px] select-none text-white-bone px-8">
           Juan Urdaneta

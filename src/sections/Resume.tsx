@@ -4,7 +4,7 @@ const Resume = () => {
       id="resume"
       className="w-screen flex justify-center min-h-[calc(100vh-96px)] bg-white-bone z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft"
     >
-      <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center py-12 md:py-32 ">
+      <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center py-12 md:py-32 p-4 ">
         <div className="w-full h-full">
           {/* <p>Juan Urdaneta</p> */}
           <p className="text-2xl mr-2">What can I bring to your team?</p>
