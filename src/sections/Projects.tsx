@@ -12,12 +12,12 @@ const Projects = () => {
     gsap.set(photos, { yPercent: 150 });
     const allPhotos = gsap.utils.toArray(".desktop-image");
 
-    details.forEach((detail, index) => {
+    details.forEach((_, index) => {
       console.log(photos[index]);
       const animation = gsap
         .timeline()
-        .to(photos[index], { yPercent: 0 })
-        .set(allPhotos[index], { autoAlpha: 0 });
+        .to(photos[index] as gsap.TweenTarget, { yPercent: 0 })
+        .set(allPhotos[index] as gsap.TweenTarget, { autoAlpha: 0 });
       ScrollTrigger.create({
         trigger: `.trigger-${index}`,
         start: "center 99%",
