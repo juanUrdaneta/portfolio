@@ -89,7 +89,7 @@ const Projects = () => {
             id="project-images"
             className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
           >
-            <div className="h-[400px] w-full max-w-[700px] relative rounded-lg overflow-hidden">
+            <div className="h-[400px] w-full max-w-[700px] relative rounded-lg overflow-hidden shadow-xl">
               <DesktopProjectImg img="shortbread.jpeg" />
               <DesktopProjectImg img="incept.webp" />
               <DesktopProjectImg img="incept.webp" />
@@ -167,10 +167,12 @@ const Project = (props: { name: string; text: string; imgSrc: string; order: num
     <div
       className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-center snap-normal`}
     >
-      <img
-        src={props.imgSrc}
-        className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 px-4 mb-2"
-      />
+      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2">
+        <img
+          src={props.imgSrc}
+          className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 "
+        />
+      </div>
       <div className="flex w-full flex-col items-center justify-center">
         <p className="text-black-soft font-chivo text-2xl italic text-center">{props.name}</p>
         <div className="p-6">
