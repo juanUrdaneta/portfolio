@@ -100,7 +100,7 @@ const Projects = () => {
           </div>
         </div>
         {/* mobile content */}
-        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block md:hidden ">
+        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block md:hidden snap-y ">
           <Project
             name="Shortbread.ai Engine"
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to
@@ -164,29 +164,27 @@ export default Projects;
 
 const Project = (props: { name: string; text: string; imgSrc: string; order: number }) => {
   return (
-    <>
-      <div
-        className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}]`}
-      >
-        <img
-          src={props.imgSrc}
-          className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 px-4 mb-2"
-        />
-        <div className="flex w-full flex-col items-center justify-center">
-          <p className="text-black-soft font-chivo text-2xl italic text-center">{props.name}</p>
-          <div className="p-6">
-            <p className="text-black-soft max-w-[500px] text-center italic text-sm">{props.text}</p>
-          </div>
+    <div
+      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-center snap-normal`}
+    >
+      <img
+        src={props.imgSrc}
+        className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 px-4 mb-2"
+      />
+      <div className="flex w-full flex-col items-center justify-center">
+        <p className="text-black-soft font-chivo text-2xl italic text-center">{props.name}</p>
+        <div className="p-6">
+          <p className="text-black-soft max-w-[500px] text-center italic text-sm">{props.text}</p>
         </div>
-        <hr className="border-black-soft mx-4 opacity-20" />
       </div>
-    </>
+      <hr className="border-black-soft mx-4 opacity-20" />
+    </div>
   );
 };
 
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
-    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] ">
+    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] snap-center snap-normal ">
       <p className="text-black-soft font-chivo text-2xl italic text-center name-trigger ">
         {props.name}
       </p>
@@ -200,7 +198,7 @@ const DesktopProject = (props: { name: string; text: string }) => {
 const DesktopProjectImg = (props: { img: string }) => {
   return (
     <div className="flex flex-col items-center justify-center desktop-image absolute w-auto h-full top-0 left-0 ">
-      <img src={props.img} alt="img" className="max-w-[900px] " />
+      <img src={props.img} alt="img" className="max-w-[900px] w-full " />
     </div>
   );
 };
