@@ -1,8 +1,8 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
 
 const Header = () => {
-  React.useEffect(() => {
+  useGSAP(() => {
     gsap.to("#name-box", {
       scale: 0.95,
       opacity: 0,
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <div className="w-screen h-[800px] max-h-[80vh] flex flex-col justify-end bg-black-soft snap-start snap-normal ">
-      <section id="name-box" className=" w-full flex flex-col justify-end items-end">
+      <section id="name-box" className=" w-full flex flex-col justify-center items-center">
         <h1 className="text-left md:text-center font-general font-thin text-6xl md:text-[200px] select-none text-white-bone px-8">
           Juan Urdaneta
         </h1>
@@ -26,6 +26,7 @@ const Header = () => {
           </p>
         </div>
       </section>
+      <div></div>
     </div>
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Techstack = () => {
-  React.useEffect(() => {
+  useGSAP(() => {
     gsap.to("#innerTechstack", {
       // scale: 0.9,
       opacity: 0.6,

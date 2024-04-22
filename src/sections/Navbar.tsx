@@ -1,9 +1,10 @@
 import React from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
   const [mobileNavto, setMobileNavTo] = React.useState<"Contact" | "Projects">("Contact");
-  React.useEffect(() => {
+  useGSAP(() => {
     gsap.fromTo(
       "#navbar",
       { opacity: 0 },
