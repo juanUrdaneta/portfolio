@@ -187,11 +187,11 @@ const Project = (props: { name: string; text: string; imgSrc: string; order: num
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
     <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] snap-center snap-normal ">
-      <p className="text-black-soft font-chivo text-2xl italic text-center name-trigger ">
+      <p className="text-black-soft font-chivo text-2xl italic text-left name-trigger ">
         {props.name}
       </p>
       <div className="p-6">
-        <p className="text-black-soft max-w-[500px] text-center italic text-md">{props.text}</p>
+        <p className="text-black-soft max-w-[500px] text-left italic text-md">{props.text}</p>
       </div>
     </div>
   );
