@@ -44,7 +44,7 @@ const Projects = () => {
         id="projects"
         className="relative z-[5] flex min-h-screen w-screen flex-col items-center justify-center bg-white-bone "
       >
-        <div className="hidden md:flex w-full">
+        <div className="hidden lg:flex w-full">
           <article className="w-1/2 justify-center ">
             <DesktopProject
               name="Shortbread.ai Engine"
@@ -89,18 +89,18 @@ const Projects = () => {
             id="project-images"
             className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
           >
-            <div className="h-[400px] w-full max-w-[700px] relative rounded-lg overflow-hidden shadow-xl">
+            <div className="h-[400px] w-[700px] max-w-[700px] relative rounded-lg overflow-hidden shadow-xl">
               <DesktopProjectImg img="shortbread.jpeg" />
-              <DesktopProjectImg img="incept.webp" />
+              <DesktopProjectImg img="N/A" grocer />
               <DesktopProjectImg img="incept.webp" />
               <DesktopProjectImg img="climatika.png" />
-              <DesktopProjectImg img="shortbread.jpeg" />
-              <DesktopProjectImg img="incept.webp" />
+              <DesktopProjectImg img="dvinum.jpeg" />
+              <DesktopProjectImg img="mesap.png" />
             </div>
           </div>
         </div>
         {/* mobile content */}
-        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block md:hidden ">
+        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block lg:hidden ">
           <Project
             name="Shortbread.ai Engine"
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to
@@ -137,20 +137,20 @@ const Projects = () => {
           <Project
             name="Dvinum"
             text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
-            imgSrc="shortbread.jpeg"
+            imgSrc="dvinum.jpeg"
             order={5}
           />
         </article>
       </div>
       <div
-        className="sticky top-24 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-white-bone md:hidden"
+        className="sticky top-24 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-white-bone lg:hidden"
         ref={ref}
       >
         <article id="last-project" className="mb-2 w-full max-w-[1200px] pb-20 block ">
           <Project
             name="Mesa Premium"
             text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers. "
-            imgSrc="incept.webp"
+            imgSrc="mesap.png"
             order={6}
           />
         </article>
@@ -162,16 +162,29 @@ const Projects = () => {
 
 export default Projects;
 
-const Project = (props: { name: string; text: string; imgSrc: string; order: number }) => {
+const Project = (props: {
+  name: string;
+  text: string;
+  imgSrc: string;
+  order: number;
+  grocer?: boolean;
+}) => {
   return (
     <div
-      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] `}
+      className={`flex w-full h-full flex-col justify-center items-center  mt-10 z-[${props.order}] `}
     >
       <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
-        <img
-          src={props.imgSrc}
-          className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 "
-        />
+        {props.grocer ? (
+          <div className="bg-[#659952] w-full h-full flex justify-center items-center flex-col">
+            <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
+            <p className="text-black-soft font-chivo text-2xl italic text-left">Grocersave</p>
+          </div>
+        ) : (
+          <img
+            src={props.imgSrc}
+            className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 "
+          />
+        )}
       </div>
       <div className="flex w-full flex-col items-center justify-center">
         <p className="text-black-soft font-chivo text-2xl italic text-center ">{props.name}</p>
@@ -197,10 +210,20 @@ const DesktopProject = (props: { name: string; text: string }) => {
   );
 };
 
-const DesktopProjectImg = (props: { img: string }) => {
+const DesktopProjectImg = (props: { img: string; grocer?: boolean }) => {
+  if (props.grocer) {
+    return (
+      <div className="flex flex-col items-center justify-center desktop-image absolute w-full h-full top-0 left-0  ">
+        <div className="bg-[#659952] w-full h-full flex justify-center items-center flex-col">
+          <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
+          <p className="text-black-soft font-chivo text-2xl italic text-left">Grocersave</p>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className="flex flex-col items-center justify-center desktop-image absolute w-auto h-full top-0 left-0 ">
-      <img src={props.img} alt="img" className="max-w-[900px] w-full " />
+    <div className="flex flex-col items-center justify-center desktop-image absolute w-[700px] h-[400px] top-0 left-0 ">
+      <img src={props.img} alt="img" className="max-w-[700px] w-[700px] " />
     </div>
   );
 };
