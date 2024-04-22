@@ -165,18 +165,16 @@ export default Projects;
 const Project = (props: { name: string; text: string; imgSrc: string; order: number }) => {
   return (
     <div
-      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] `}
+      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-start snap-normal `}
     >
-      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2">
+      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
         <img
           src={props.imgSrc}
           className=" max-w-3/4 h-auto w-[600px]  transition-all duration-300 "
         />
       </div>
       <div className="flex w-full flex-col items-center justify-center">
-        <p className="text-black-soft font-chivo text-2xl italic text-center snap-center snap-normal">
-          {props.name}
-        </p>
+        <p className="text-black-soft font-chivo text-2xl italic text-center ">{props.name}</p>
         <div className="p-6">
           <p className="text-black-soft max-w-[500px] text-center italic text-sm">{props.text}</p>
         </div>
