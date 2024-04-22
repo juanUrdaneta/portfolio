@@ -118,8 +118,9 @@ const Projects = () => {
             power users to perform mass data update operations with a focus on data integrity and ease of use.
             Developed backend features that enabled the automation for mass product updates and allowed out 
             backend interact with core aws services."
-            imgSrc="incept.webp"
+            imgSrc="N/A"
             order={2}
+            grocer
           />
           <Project
             name="Incept Landing Page"
@@ -175,7 +176,7 @@ const Project = (props: {
     >
       <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
         {props.grocer ? (
-          <div className="bg-[#659952] w-full h-full flex justify-center items-center flex-col">
+          <div className="bg-[#659952] w-[92vw] h-full flex justify-center items-center flex-col">
             <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
             <p className="text-black-soft font-chivo text-2xl italic text-left">Grocersave</p>
           </div>
