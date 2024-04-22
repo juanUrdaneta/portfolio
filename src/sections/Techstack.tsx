@@ -16,7 +16,7 @@ const Techstack = () => {
   return (
     <div
       id="techstack"
-      className="w-screen flex justify-center items-center bg-black-soft sticky top-24 z-20 mt-[-1px] border-t border-t-black-soft snap-center snap-normal"
+      className="w-screen flex justify-center items-center bg-black-soft sticky top-24 z-20 mt-[-1px] border-t border-t-black-soft "
     >
       <section
         id="innerTechstack"

@@ -7,10 +7,23 @@ import Resume from "./sections/Resume";
 import Techstack from "./sections/Techstack";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  React.useEffect(() => {
+    const lenis = new Lenis({ lerp: 0.1 });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+  }, []);
   useGSAP(() => {
     gsap.to("#box-effect", {
       bottom: "100vh",

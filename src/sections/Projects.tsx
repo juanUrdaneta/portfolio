@@ -100,7 +100,7 @@ const Projects = () => {
           </div>
         </div>
         {/* mobile content */}
-        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block md:hidden snap-y ">
+        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block md:hidden ">
           <Project
             name="Shortbread.ai Engine"
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to
@@ -165,7 +165,7 @@ export default Projects;
 const Project = (props: { name: string; text: string; imgSrc: string; order: number }) => {
   return (
     <div
-      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-center snap-normal `}
+      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] `}
     >
       <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
         <img
@@ -186,7 +186,7 @@ const Project = (props: { name: string; text: string; imgSrc: string; order: num
 
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
-    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] snap-center snap-normal ">
+    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] ">
       <p className="text-black-soft font-chivo text-2xl italic text-left name-trigger ">
         {props.name}
       </p>
