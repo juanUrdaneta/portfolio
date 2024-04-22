@@ -24,7 +24,7 @@ const Techstack = () => {
       >
         <img src="/ts.svg" className="w-[100px] md:w-[150px] invert grayscale" />
         <img src="/nextjs.svg" className="w-[100px] md:w-[150px] grayscale invert" />
-        <img src="/tailwindcss.svg" className="w-[100px] md:w-[150px] grayscale" />
+        <img src="/tailwindcss.svg" className="w-[100px] md:w-[150px] grayscale invert" />
         <img src="/firebase.svg" className="w-[100px] md:w-[150px] grayscale" />
         <img src="/aws.svg" className="w-[100px] md:w-[150px] grayscale invert" />
       </section>

@@ -89,12 +89,12 @@ const Projects = () => {
             id="project-images"
             className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
           >
-            <div className="h-[500px] w-full relative rounded-lg overflow-hidden">
-              <DesktopProjectImg img="shortbread.webp" />
+            <div className="h-[400px] w-full max-w-[700px] relative rounded-lg overflow-hidden">
+              <DesktopProjectImg img="shortbread.jpeg" />
               <DesktopProjectImg img="incept.webp" />
               <DesktopProjectImg img="incept.webp" />
               <DesktopProjectImg img="climatika.png" />
-              <DesktopProjectImg img="shortbread.webp" />
+              <DesktopProjectImg img="shortbread.jpeg" />
               <DesktopProjectImg img="incept.webp" />
             </div>
           </div>
@@ -108,7 +108,7 @@ const Projects = () => {
             scalable and robust architecture that will enable the product to grow without
             compromising core features. Worked on integrating backend APIs that generated /
             enhanced / edited images with AI generative models."
-            imgSrc="shortbread.webp"
+            imgSrc="shortbread.jpeg"
             order={1}
           />
           <Project
@@ -137,7 +137,7 @@ const Projects = () => {
           <Project
             name="Dvinum"
             text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
-            imgSrc="shortbread.webp"
+            imgSrc="shortbread.jpeg"
             order={5}
           />
         </article>
