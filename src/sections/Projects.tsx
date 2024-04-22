@@ -165,7 +165,7 @@ export default Projects;
 const Project = (props: { name: string; text: string; imgSrc: string; order: number }) => {
   return (
     <div
-      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-center snap-normal`}
+      className={`flex w-full h-full flex-col justify-center md:flex-row mt-10 z-[${props.order}] snap-start snap-normal`}
     >
       <img
         src={props.imgSrc}
