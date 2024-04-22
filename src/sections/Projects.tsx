@@ -44,7 +44,7 @@ const Projects = () => {
         id="projects"
         className="relative z-[5] flex min-h-screen w-screen flex-col items-center justify-center bg-white-bone "
       >
-        <div className="flex w-full">
+        <div className="hidden md:flex w-full">
           <article className="w-1/2 justify-center ">
             <DesktopProject
               name="Shortbread.ai Engine"
