@@ -22,11 +22,11 @@ const Techstack = () => {
         id="innerTechstack"
         className="w-full max-w-[1200px] my-2 flex justify-around md:justify-between py-4 flex-wrap"
       >
-        <img src="/ts.svg" className="w-[100px] md:w-[150px] invert grayscale" />
-        <img src="/nextjs.svg" className="w-[100px] md:w-[150px] grayscale invert" />
-        <img src="/tailwindcss.svg" className="w-[100px] md:w-[150px] grayscale invert" />
-        <img src="/firebase.svg" className="w-[100px] md:w-[150px] grayscale" />
-        <img src="/aws.svg" className="w-[100px] md:w-[150px] grayscale invert" />
+        <img src="ts.svg" className="w-[100px] md:w-[150px] invert grayscale" />
+        <img src="nextjs.svg" className="w-[100px] md:w-[150px] grayscale invert" />
+        <img src="tailwindcss.svg" className="w-[100px] md:w-[150px] grayscale invert" />
+        <img src="firebase.svg" className="w-[100px] md:w-[150px] grayscale" />
+        <img src="aws.svg" className="w-[100px] md:w-[150px] grayscale invert" />
       </section>
     </div>
   );
