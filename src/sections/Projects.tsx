@@ -8,12 +8,13 @@ const Projects = () => {
 
   useGSAP(() => {
     const photos = gsap.utils.toArray(".desktop-image:not(:first-child)");
+    const photosObj = gsap.utils.toArray(".desktop-image-obj").slice(1);
     const details = gsap.utils.toArray(".desktop-detail");
-    gsap.set(photos, { yPercent: 150 });
     const allPhotos = gsap.utils.toArray(".desktop-image");
+    gsap.set(photos, { yPercent: 150 });
+    gsap.set(photosObj, { yPercent: -150 });
 
     details.forEach((_, index) => {
-      console.log(photos[index]);
       const animation = gsap
         .timeline()
         .to(photos[index] as gsap.TweenTarget, { yPercent: 0 })
@@ -24,7 +25,17 @@ const Projects = () => {
         end: "bottom 1%",
         animation: animation,
         scrub: true,
-        markers: false,
+      });
+    });
+    details.forEach((_, index) => {
+      console.log(photosObj[index]);
+      const animation = gsap.timeline().to(photosObj[index] as gsap.TweenTarget, { yPercent: 0 });
+      ScrollTrigger.create({
+        trigger: `.trigger-${index}`,
+        start: "center 99%",
+        end: "bottom 1%",
+        animation: animation,
+        scrub: true,
       });
     });
 
@@ -74,6 +85,7 @@ const Projects = () => {
               name="Climatika App"
               text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
             />
+
             <div className="trigger-3"></div>
             <DesktopProject
               name="Dvinum"
@@ -89,7 +101,10 @@ const Projects = () => {
             id="project-images"
             className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
           >
-            <div className="h-[400px] w-[700px] max-w-[700px] relative rounded-lg overflow-hidden shadow-xl">
+            <div
+              id="image-container"
+              className="h-[400px] max-h-[400px] w-[700px] max-w-[700px] relative rounded-lg overflow-hidden shadow-xl"
+            >
               <DesktopProjectImg img="shortbread.jpeg" />
               <DesktopProjectImg img="N/A" grocer />
               <DesktopProjectImg img="incept.webp" />
@@ -214,17 +229,21 @@ const DesktopProject = (props: { name: string; text: string }) => {
 const DesktopProjectImg = (props: { img: string; grocer?: boolean }) => {
   if (props.grocer) {
     return (
-      <div className="flex flex-col items-center justify-center desktop-image absolute w-full h-full top-0 left-0  ">
-        <div className="bg-[#659952] w-full h-full flex justify-center items-center flex-col">
+      <div className="flex flex-col items-center justify-center desktop-image absolute w-[700px] h-[400px] top-0 left-0 overflow-hidden  ">
+        <div className="bg-[#659952] w-[700px] h-[400px] flex justify-center items-center flex-col absolute top-0 left-0 desktop-image-obj ">
           <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
-          <p className="text-black-soft font-chivo text-2xl italic text-left">Grocersave</p>
+          <p className="text-black-soft font-chivo text-2xl italic text-left ">Grocersave</p>
         </div>
       </div>
     );
   }
   return (
-    <div className="flex flex-col items-center justify-center desktop-image absolute w-[700px] h-[400px] top-0 left-0 ">
-      <img src={props.img} alt="img" className="max-w-[700px] w-[700px] " />
+    <div className="flex flex-col items-center justify-center desktop-image w-[700px] h-[400px] top-0 left-0 overflow-hidden absolute ">
+      <img
+        src={props.img}
+        alt="img"
+        className="max-w-[700px] w-[700px] h-[400px] absolute desktop-image-obj object-cover "
+      />
     </div>
   );
 };
