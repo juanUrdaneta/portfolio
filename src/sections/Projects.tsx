@@ -59,26 +59,18 @@ const Projects = () => {
           <article className="w-1/2 justify-center ">
             <DesktopProject
               name="Shortbread.ai Engine"
-              text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to
-              create and edit webcomics working closely with the product designer to create a
-              scalable and robust architecture that will enable the product to grow without
-              compromising core features. Worked on integrating backend APIs that generated /
-              enhanced / edited images with AI generative models."
+              text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             />
             <div className="trigger-0"></div>
             <DesktopProject
               name="GrocerSave App"
-              text="Developed front end features for a crowd sourced grocery list React Native App. 
-              Worked closely with the Product Manager to develop specific workflows that enabled potential 
-              power users to perform mass data update operations with a focus on data integrity and ease of use.
-              Developed backend features that enabled the automation for mass product updates and allowed out 
-              backend interact with core aws services."
+              text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
+              Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
             />
             <div className="trigger-1"></div>
             <DesktopProject
               name="Incept Landing Page"
-              text="Developed a responsive pixel-perfect website, worked in tandem with a webgl developer to architect the component 
-              structure to fit the needs for three.js to run and adjust properly to the end design."
+              text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             />
             <div className="trigger-2"></div>
             <DesktopProject
@@ -89,12 +81,12 @@ const Projects = () => {
             <div className="trigger-3"></div>
             <DesktopProject
               name="Dvinum"
-              text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
+              text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             />
             <div className="trigger-4"></div>
             <DesktopProject
               name="Mesa Premium"
-              text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers. "
+              text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
             />
           </article>
           <div
@@ -118,29 +110,21 @@ const Projects = () => {
         <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block lg:hidden ">
           <Project
             name="Shortbread.ai Engine"
-            text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to
-            create and edit webcomics working closely with the product designer to create a
-            scalable and robust architecture that will enable the product to grow without
-            compromising core features. Worked on integrating backend APIs that generated /
-            enhanced / edited images with AI generative models."
+            text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             imgSrc="shortbread.jpeg"
             order={1}
           />
           <Project
             name="GrocerSave App"
-            text="Developed front end features for a crowd sourced grocery list React Native App. 
-            Worked closely with the Product Manager to develop specific workflows that enabled potential 
-            power users to perform mass data update operations with a focus on data integrity and ease of use.
-            Developed backend features that enabled the automation for mass product updates and allowed out 
-            backend interact with core aws services."
+            text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
+            Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
             imgSrc="N/A"
             order={2}
             grocer
           />
           <Project
             name="Incept Landing Page"
-            text="Developed a responsive pixel-perfect website, worked in tandem with a webgl developer to architect the component 
-            structure to fit the needs for three.js to run and adjust properly to the end design."
+            text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             imgSrc="incept.webp"
             order={3}
           />
@@ -152,7 +136,7 @@ const Projects = () => {
           />
           <Project
             name="Dvinum"
-            text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
+            text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             imgSrc="dvinum.jpeg"
             order={5}
           />
@@ -165,7 +149,7 @@ const Projects = () => {
         <article id="last-project" className="mb-2 w-full max-w-[1200px] pb-20 block ">
           <Project
             name="Mesa Premium"
-            text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers. "
+            text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
             imgSrc="mesap.png"
             order={6}
           />

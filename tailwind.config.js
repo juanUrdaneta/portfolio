@@ -12,6 +12,7 @@ export default {
         chivo: ["Chivo", "sans-serif"],
         major: ["Major Mono Display", "sans-serif"],
         general: ["General", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
     },
   },
