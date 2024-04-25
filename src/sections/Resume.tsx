@@ -2,20 +2,19 @@ const Resume = () => {
   return (
     <div
       id="resume"
-      className="w-screen flex justify-center min-h-[calc(100vh-96px)] bg-white-bone z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft "
+      className="w-screen flex justify-center min-h-[100px] bg-white-bone z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft "
     >
       <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center py-12 md:py-32 p-4 ">
-        <div className="w-full h-full">
-          {/* <p>Juan Urdaneta</p> */}
+        {/* <div className="w-full h-full">
           <p className="text-2xl mr-2">What can I bring to your team?</p>
           <div>
             <p>Front end development</p>
             <p></p>
           </div>
-        </div>
-        <div className="w-full h-full">
+        </div> */}
+        <div className="w-full h-full flex items-center justify-end">
           {/* <p>Juan Urdaneta</p> */}
-          <a href="mailto:urdntjuan@gmail.com" className="flex items-end">
+          <a href="mailto:urdntjuan@gmail.com" className="flex items-end ">
             <p className="text-2xl mr-2">Contact me:</p>
             <p>urdntjuan@gmail.com</p>
           </a>

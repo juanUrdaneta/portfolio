@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./sections/Header";
 import Navbar from "./sections/Navbar";
 import Projects from "./sections/Projects";
-import Resume from "./sections/Resume";
+// import Resume from "./sections/Resume";
 import Techstack from "./sections/Techstack";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -40,7 +40,7 @@ function App() {
         <Header />
         <Projects />
         <Techstack />
-        <Resume />
+        {/* <Resume /> */}
       </main>
       <footer></footer>
     </>
