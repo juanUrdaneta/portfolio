@@ -4,7 +4,7 @@ const Resume = () => {
       id="resume"
       className="w-screen flex justify-center min-h-[100px] bg-white-bone z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft "
     >
-      <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center py-12 md:py-32 p-4 ">
+      <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center md:py-12 md:px -6 p-4 ">
         {/* <div className="w-full h-full">
           <p className="text-2xl mr-2">What can I bring to your team?</p>
           <div>
@@ -13,11 +13,23 @@ const Resume = () => {
           </div>
         </div> */}
         <div className="w-full h-full flex items-center justify-end">
-          {/* <p>Juan Urdaneta</p> */}
-          <a href="mailto:urdntjuan@gmail.com" className="flex items-end ">
-            <p className="text-2xl mr-2">Contact me:</p>
-            <p>urdntjuan@gmail.com</p>
-          </a>
+          <div className="flex flex-col items-start justify-center  desktop-detail w-full ">
+            <p className="text-black-soft font-chivo text-2xl italic text-right name-trigger  mb-2 ">
+              Contact me
+            </p>
+            <div className="">
+              <a href="mailto:urdntjuan@gmail.com">
+                <p className="text-black-soft max-w-[500px] text-left font-openSans text-lg">
+                  urdntjuan@gmail.com
+                </p>
+              </a>
+              <a href="https://twitter.com/JuanUrdane54430">
+                <p className="text-black-soft max-w-[500px] text-left font-openSans text-lg">
+                  Twitter
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
         {/* <div className="w-full md:w-1/2"> */}
         {/* <ResumeArticle

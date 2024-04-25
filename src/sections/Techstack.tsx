@@ -28,15 +28,6 @@ const Techstack = () => {
         <img src="firebase.svg" className="w-[100px] md:w-[150px] grayscale" />
         <img src="aws.svg" className="w-[100px] md:w-[150px] grayscale invert" />
       </section>
-      <div className="w-full h-full flex items-center justify-center mb-4">
-        <a
-          href="mailto:urdntjuan@gmail.com"
-          className="flex items-end text-white-bone text-thin font-openSans "
-        >
-          <p className="text-lg  mr-2 ">Contact me:</p>
-          <p>urdntjuan@gmail.com</p>
-        </a>
-      </div>
     </div>
   );
 };

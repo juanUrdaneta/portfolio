@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./sections/Header";
 import Navbar from "./sections/Navbar";
 import Projects from "./sections/Projects";
-// import Resume from "./sections/Resume";
+import Resume from "./sections/Resume";
 import Techstack from "./sections/Techstack";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -31,7 +31,30 @@ function App() {
       duration: 1.5,
       delay: 0.5,
     });
+    gsap.fromTo(
+      "#description-box",
+      { x: "25%", opacity: 0 },
+      {
+        opacity: 1,
+        x: "0%",
+        delay: 1.2,
+        duration: 1,
+        ease: "power2.in",
+      }
+    );
+    gsap.fromTo(
+      "#name-box",
+      { x: "-25%", opacity: 0 },
+      {
+        opacity: 1,
+        x: "0%",
+        delay: 1.2,
+        duration: 1,
+        ease: "power2.in",
+      }
+    );
   }, []);
+
   return (
     <>
       <main className="relative">
@@ -40,7 +63,7 @@ function App() {
         <Header />
         <Projects />
         <Techstack />
-        {/* <Resume /> */}
+        <Resume />
       </main>
       <footer></footer>
     </>

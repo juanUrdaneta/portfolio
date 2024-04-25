@@ -3,6 +3,7 @@ import gsap from "gsap";
 
 const Header = () => {
   useGSAP(() => {
+    // recurrent
     gsap.to("#name-box", {
       opacity: 0,
       x: "-50%",
@@ -39,20 +40,21 @@ const Header = () => {
             Software Engineer
           </p>
         </div>
+        <div className="w-16"></div>
         <div
           id="description-box"
-          className="h-fit p-2 flex flex-col justify-center items-start mt-12 rounded-2xl w-3/4 md:w-1/2 px-8 md:px-0"
+          className="h-fit flex flex-col justify-center items-start mt-12 w-3/4 md:w-1/2 px-8 md:px-0"
         >
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 text-left ">
+          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
             As a seasoned Front-End Engineer, I am deeply committed to solving complex problems
           </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 text-left ">
+          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
             and transforming business ideas into tangible products.
           </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 text-left ">
+          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
             With a keen focus on collaboration, I excel in partnering with Product Managers
           </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 text-left ">
+          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
             and Graphic Designers to refine and iterate on solutions, ensuring that the user
             experience is optimized to its fullest potential.
           </p>
