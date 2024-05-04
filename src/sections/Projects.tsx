@@ -28,7 +28,6 @@ const Projects = () => {
       });
     });
     details.forEach((_, index) => {
-      console.log(photosObj[index]);
       const animation = gsap.timeline().to(photosObj[index] as gsap.TweenTarget, { yPercent: 0 });
       ScrollTrigger.create({
         trigger: `.trigger-${index}`,

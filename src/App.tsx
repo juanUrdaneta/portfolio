@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import "./App.css";
 import Header from "./sections/Header";
-import Navbar from "./sections/Navbar";
+// import Navbar from "./sections/Navbar";
 import Projects from "./sections/Projects";
 import Resume from "./sections/Resume";
 import Techstack from "./sections/Techstack";
@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 import Lenis from "lenis";
+import BackgroundCanvas from "./three/BackgroundCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,12 +65,13 @@ function App() {
   return (
     <>
       <main className="relative">
-        <Navbar />
+        {/* <Navbar /> */}
         <div
           id="box-effect"
           className="fixed bottom-0 w-screen h-screen bg-black-soft z-[20]"
         ></div>
         <Header />
+        <BackgroundCanvas />
         <Projects />
         <Techstack />
         <Resume />
