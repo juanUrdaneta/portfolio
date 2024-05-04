@@ -143,7 +143,7 @@ const Projects = () => {
         </article>
       </div>
       <div
-        className="sticky top-24 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-white-bone lg:hidden"
+        className="sticky top-16 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-white-bone lg:hidden"
         ref={ref}
       >
         <article id="last-project" className="mb-2 w-full max-w-[1200px] pb-20 block ">
@@ -189,7 +189,9 @@ const Project = (props: {
       <div className="flex w-full flex-col items-center justify-center">
         <p className="text-black-soft font-chivo text-2xl italic text-center ">{props.name}</p>
         <div className="p-6">
-          <p className="text-black-soft max-w-[500px] text-center italic text-sm">{props.text}</p>
+          <p className="text-black-soft max-w-[500px] font-openSans text-center italic text-sm">
+            {props.text}
+          </p>
         </div>
       </div>
       <hr className="border-black-soft mx-4 opacity-20" />
@@ -204,7 +206,9 @@ const DesktopProject = (props: { name: string; text: string }) => {
         {props.name}
       </p>
       <div className="p-6">
-        <p className="text-black-soft max-w-[500px] text-left italic text-md">{props.text}</p>
+        <p className="text-black-soft max-w-[500px] font-openSans text-left italic text-md">
+          {props.text}
+        </p>
       </div>
     </div>
   );

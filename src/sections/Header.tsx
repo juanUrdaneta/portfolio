@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <div
       id="header"
-      className="w-screen h-[800px] max-h-[80vh] flex flex-col justify-end bg-black-soft "
+      className="w-screen h-[800px] max-h-[80vh] flex flex-col justify-end bg-black-soft overflow-hidden "
     >
       <section className=" w-full flex flex-col md:flex-row justify-center items-start md:items-center mb-10">
         <div className="px-8 w-full md:w-1/2 bg-black-soft" id="name-box">

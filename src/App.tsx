@@ -30,6 +30,12 @@ function App() {
       ease: "expo.inOut",
       duration: 1.5,
       delay: 0.5,
+      onComplete: () => {
+        gsap.to("#box-effect", {
+          opacity: 0,
+          visibility: "hidden",
+        });
+      },
     });
     gsap.fromTo(
       "#description-box",
@@ -37,7 +43,7 @@ function App() {
       {
         opacity: 1,
         x: "0%",
-        delay: 1.2,
+        delay: 0.8,
         duration: 1,
         ease: "power2.in",
       }
@@ -48,7 +54,7 @@ function App() {
       {
         opacity: 1,
         x: "0%",
-        delay: 1.2,
+        delay: 0.8,
         duration: 1,
         ease: "power2.in",
       }
@@ -59,7 +65,10 @@ function App() {
     <>
       <main className="relative">
         <Navbar />
-        <div id="box-effect" className="fixed bottom-0 w-screen h-screen bg-black-soft z-50"></div>
+        <div
+          id="box-effect"
+          className="fixed bottom-0 w-screen h-screen bg-black-soft z-[20]"
+        ></div>
         <Header />
         <Projects />
         <Techstack />
