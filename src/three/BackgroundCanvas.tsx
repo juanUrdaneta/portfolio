@@ -2,10 +2,12 @@ import React from "react";
 import * as THREE from "three";
 import vertexShader from "./shaders/test/vertex.glsl";
 import fragmentShader from "./shaders/test/fragment.glsl";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const BackgroundCanvas = () => {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
-  React.useEffect(() => {
+  useGSAP(() => {
     if (canvasRef.current) {
       console.log("running");
       const sizes = {
@@ -24,6 +26,16 @@ const BackgroundCanvas = () => {
         fragmentShader: fragmentShader,
         side: THREE.DoubleSide,
       });
+
+      material.uniforms = {
+        uTime: {
+          value: 0,
+        },
+        uScrollPos: {
+          value: 0,
+        },
+      };
+
       const mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
 
@@ -34,13 +46,35 @@ const BackgroundCanvas = () => {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       renderer.setSize(window.innerWidth, window.innerHeight);
+      const clock = new THREE.Clock();
 
-      const tick = () => {
+      const render = () => {
         renderer.render(scene, camera);
         window.requestAnimationFrame(tick);
       };
 
+      const tick = () => {
+        const elapsedTime = clock.getElapsedTime();
+        material.uniforms.uTime.value = elapsedTime;
+        render();
+      };
+
       tick();
+      gsap.to("#main-box", {
+        scrollTrigger: {
+          trigger: "#main-box",
+          start: "top top", // when the top of the trigger hits the top of the viewport
+          end: "bottom bottom", // when the bottom of the trigger hits the bottom of the viewport
+          onUpdate: (self) => {
+            const progress = self.progress.toFixed(3); // Get the progress of the scroll
+            console.log(progress); // Log or use the scroll progress
+            material.uniforms.uScrollPos.value = progress;
+            render();
+          },
+          scrub: true,
+          markers: false, // This will show markers on the page for debugging
+        },
+      });
       window.addEventListener("resize", () => {
         // Update sizes
         sizes.width = window.innerWidth;
@@ -66,7 +100,7 @@ const BackgroundCanvas = () => {
     }
   }, []);
   return (
-    <div className="w-screen h-full min-h-[500px] border-0 border-t-white">
+    <div className="sticky top-0 z-[5] w-screen h-full min-h-[500px] border-0 border-t-white">
       <canvas style={{ width: "100%", height: "100" }} ref={canvasRef}></canvas>
     </div>
   );

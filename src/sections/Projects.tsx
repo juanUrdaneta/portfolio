@@ -52,7 +52,7 @@ const Projects = () => {
     <>
       <div
         id="projects"
-        className="relative z-[5] flex min-h-screen w-screen flex-col items-center justify-center bg-white-bone "
+        className="relative z-10 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
       >
         <div className="hidden lg:flex w-full">
           <article className="w-1/2 justify-center ">
@@ -142,7 +142,7 @@ const Projects = () => {
         </article>
       </div>
       <div
-        className="sticky top-16 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-white-bone lg:hidden"
+        className="sticky top-16 z-10 mt-[-1px] flex w-screen flex-col items-center justify-center bg-transparent lg:hidden"
         ref={ref}
       >
         <article id="last-project" className="mb-2 w-full max-w-[1200px] pb-20 block ">
@@ -200,12 +200,12 @@ const Project = (props: {
 
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
-    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)] ">
-      <p className="text-black-soft font-chivo text-2xl italic text-left name-trigger ">
+    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)]">
+      <p className="text-black-soft font-chivo text-4xl italic text-left name-trigger ">
         {props.name}
       </p>
-      <div className="p-6">
-        <p className="text-black-soft max-w-[500px] font-openSans text-left italic text-md">
+      <div className="p-6 ">
+        <p className="text-black-soft max-w-[500px] font-openSans text-left italic text-md  ">
           {props.text}
         </p>
       </div>

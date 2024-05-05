@@ -2,7 +2,7 @@ const Resume = () => {
   return (
     <div
       id="resume"
-      className="w-screen flex justify-center min-h-[100px] bg-white-bone z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft "
+      className="w-screen flex justify-center min-h-[100px] bg-transperent z-30 mt-[-1px] sticky top-24 border-t border-t-black-soft "
     >
       <div className="flex  max-w-[1200px] w-full flex-col justify-start md:justify-center md:py-12 md:px -6 p-4 ">
         {/* <div className="w-full h-full">

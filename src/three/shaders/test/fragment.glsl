@@ -1,4 +1,6 @@
 varying vec2 vUv;
+varying float vTime;
+varying float vScrollPos;
 
 vec4 permute(vec4 x)
 {
@@ -8,18 +10,6 @@ vec4 permute(vec4 x)
 vec2 fade(vec2 t)
 {
     return t*t*t*(t*(t*6.0-15.0)+10.0);
-}
-float noise3(vec3 x) {
-    vec3 p = floor(x),f = fract(x);
-
-    f = f*f*(3.-2.*f);  // or smoothstep     // to make derivative continuous at borders
-
-#define hash3(p)  fract(sin(1e3*dot(p,vec3(1,57,-13.7)))*4375.5453)        // rand
-    
-    return mix( mix(mix( hash3(p+vec3(0,0,0)), hash3(p+vec3(1,0,0)),f.x),       // triilinear interp
-                    mix( hash3(p+vec3(0,1,0)), hash3(p+vec3(1,1,0)),f.x),f.y),
-                mix(mix( hash3(p+vec3(0,0,1)), hash3(p+vec3(1,0,1)),f.x),       
-                    mix( hash3(p+vec3(0,1,1)), hash3(p+vec3(1,1,1)),f.x),f.y), f.z);
 }
 
 float cnoise(vec2 P)
@@ -63,6 +53,22 @@ void main()
         MAKE VUV MULTIPLIER DEPENDANT ON SCREEN SIZE
         MAKE CNOISE MULTIPLIER VARY WITH MOUSE MOVEMENT
     */
-    float strength = step(0.0,sin(cnoise(vUv * 4.0)*25.0));
-    gl_FragColor = vec4(vec3(strength), 1.0);
-}   
+    float cnoise_multiplier = 10. + (vScrollPos * 40.);
+    vec2 vUv_multiplier = vUv * 1.;
+    float strength = smoothstep(0.0, 0.05,cos(cnoise(vUv_multiplier)* cnoise_multiplier));
+
+    // vec3 uvColor = vec3(vUv.x * 2., vUv.y, 0.5);
+    // vec3 blackColor = vec3(0.0);
+    // vec3 mixedColor = mix(blackColor, uvColor, strength);
+
+
+    // vec3 whiteBone = vec3(0.976,0.965,0.933);
+    // vec3 blackSoft = vec3(0.078,0.082,0.086);
+    // vec3 mixedColor = mix(blackSoft, whiteBone, strength);
+
+    vec3 whiteBone = vec3(0.976,0.965,0.933);
+    vec3 opaqueWhiteBone = vec3(0.896,0.885,0.853);
+    vec3 mixedColor = mix(opaqueWhiteBone, whiteBone, strength);
+
+    gl_FragColor = vec4(mixedColor, 1.0);
+}

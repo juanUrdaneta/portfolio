@@ -64,7 +64,7 @@ function App() {
 
   return (
     <>
-      <main className="relative">
+      <main id="main-box" className="relative">
         {/* <Navbar /> */}
         <div
           id="box-effect"
