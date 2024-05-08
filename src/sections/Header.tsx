@@ -5,7 +5,6 @@ const Header = () => {
   useGSAP(() => {
     // recurrent
     gsap.to("#name-box", {
-      opacity: 0,
       x: "-50%",
       ease: "power4.out",
       scrollTrigger: {
@@ -15,9 +14,26 @@ const Header = () => {
       },
     });
     gsap.to("#description-box", {
-      opacity: 0,
       x: "50%",
       ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#header",
+        start: "top top",
+        scrub: true,
+      },
+    });
+    gsap.to("#name-box", {
+      opacity: 0,
+      ease: "sine.out",
+      scrollTrigger: {
+        trigger: "#header",
+        start: "top top",
+        scrub: true,
+      },
+    });
+    gsap.to("#description-box", {
+      opacity: 0,
+      ease: "sine.out",
       scrollTrigger: {
         trigger: "#header",
         start: "top top",

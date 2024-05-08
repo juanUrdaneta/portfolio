@@ -43,24 +43,42 @@ function App() {
     });
     gsap.fromTo(
       "#description-box",
-      { x: "25%", opacity: 0 },
+      { x: "25%" },
       {
-        opacity: 1,
         x: "0%",
-        delay: 1.4,
+        delay: 1.6,
         duration: 0.8,
         ease: "power4.out",
       }
     );
     gsap.fromTo(
       "#name-box",
-      { x: "-25%", opacity: 0 },
+      { x: "-25%" },
       {
-        opacity: 1,
         x: "0%",
-        delay: 1.4,
+        delay: 1.6,
         duration: 0.8,
         ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      "#description-box",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 1.6,
+        duration: 1.2,
+        ease: "sine.out",
+      }
+    );
+    gsap.fromTo(
+      "#name-box",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 1.6,
+        duration: 1.2,
+        ease: "sine.out",
       }
     );
   }, []);
