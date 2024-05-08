@@ -32,7 +32,7 @@ function App() {
     gsap.to("#box-effect", {
       bottom: "100vh",
       ease: "power4.inOut",
-      duration: 1.5,
+      duration: 2.5,
       delay: 0.5,
       onComplete: () => {
         gsap.to("#box-effect", {
@@ -47,8 +47,8 @@ function App() {
       {
         opacity: 1,
         x: "0%",
-        delay: 0.8,
-        duration: 1,
+        delay: 1.4,
+        duration: 0.8,
         ease: "power4.out",
       }
     );
@@ -58,8 +58,8 @@ function App() {
       {
         opacity: 1,
         x: "0%",
-        delay: 0.8,
-        duration: 1,
+        delay: 1.4,
+        duration: 0.8,
         ease: "power4.out",
       }
     );
