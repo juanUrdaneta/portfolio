@@ -1,6 +1,7 @@
 varying vec2 vUv;
 varying float vTime;
 varying float vScrollPos;
+varying vec3 vColor;
 
 vec4 permute(vec4 x)
 {
@@ -67,7 +68,7 @@ void main()
     // vec3 mixedColor = mix(blackSoft, whiteBone, strength);
 
     vec3 whiteBone = vec3(0.976,0.965,0.933);
-    vec3 opaqueWhiteBone = vec3(0.896,0.885,0.853);
+    vec3 opaqueWhiteBone = vec3(0.956,0.945,0.913);
     vec3 mixedColor = mix(opaqueWhiteBone, whiteBone, strength);
 
     gl_FragColor = vec4(mixedColor, 1.0);

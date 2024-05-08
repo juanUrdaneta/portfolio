@@ -4,9 +4,32 @@ import vertexShader from "./shaders/test/vertex.glsl";
 import fragmentShader from "./shaders/test/fragment.glsl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { COLORS_ARRAY, SB_COLOR } from "./colors";
+import { debounce } from "lodash";
+
+const interpolateColors = (startIndex: number, endIndex: number, progress: number) => {
+  const newColorX = gsap.utils.interpolate(
+    COLORS_ARRAY[startIndex].x,
+    COLORS_ARRAY[endIndex].x,
+    progress
+  );
+  const newColorY = gsap.utils.interpolate(
+    COLORS_ARRAY[startIndex].y,
+    COLORS_ARRAY[endIndex].y,
+    progress
+  );
+  const newColorZ = gsap.utils.interpolate(
+    COLORS_ARRAY[startIndex].z,
+    COLORS_ARRAY[endIndex].z,
+    progress
+  );
+  console.log({ x: newColorX, y: newColorY, z: newColorZ });
+  return { x: newColorX, y: newColorY, z: newColorZ };
+};
 
 const BackgroundCanvas = () => {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+
   useGSAP(() => {
     if (canvasRef.current) {
       console.log("running");
@@ -26,13 +49,21 @@ const BackgroundCanvas = () => {
         fragmentShader: fragmentShader,
         side: THREE.DoubleSide,
       });
-
+      console.log(geometry.attributes.uv);
       material.uniforms = {
         uTime: {
           value: 0,
         },
         uScrollPos: {
           value: 0,
+        },
+        // TRANSFORM THIS INTO FLOAT32ARRAY
+        uColor: {
+          value: [
+            new THREE.Color(SB_COLOR.x),
+            new THREE.Color(SB_COLOR.y),
+            new THREE.Color(SB_COLOR.z),
+          ],
         },
       };
 
@@ -48,17 +79,14 @@ const BackgroundCanvas = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
       const clock = new THREE.Clock();
 
-      const render = () => {
-        renderer.render(scene, camera);
-        window.requestAnimationFrame(tick);
-      };
-
       const tick = () => {
-        const elapsedTime = clock.getElapsedTime();
-        material.uniforms.uTime.value = elapsedTime;
-        render();
+        window.requestAnimationFrame(() => {
+          const elapsedTime = clock.getElapsedTime();
+          material.uniforms.uTime.value = elapsedTime;
+          renderer.render(scene, camera);
+        });
       };
-
+      // console.log(activeColor);
       tick();
       gsap.to("#main-box", {
         scrollTrigger: {
@@ -67,12 +95,61 @@ const BackgroundCanvas = () => {
           end: "bottom bottom", // when the bottom of the trigger hits the bottom of the viewport
           onUpdate: (self) => {
             const progress = self.progress.toFixed(3); // Get the progress of the scroll
-            console.log(progress); // Log or use the scroll progress
             material.uniforms.uScrollPos.value = progress;
-            render();
+            tick();
           },
           scrub: true,
           markers: false, // This will show markers on the page for debugging
+        },
+      });
+
+      gsap.to("#projects", {
+        scrollTrigger: {
+          trigger: "#projects",
+          pin: "#project-images",
+          start: "top top",
+          end: "bottom bottom",
+          onUpdate: (self) => {
+            // const progress = self.progress.toFixed(3); // Get the progress of the scroll
+            if (self.progress < 1 / 6) {
+              const { x, y, z } = interpolateColors(0, 1, self.progress);
+              console.log(x, y, z);
+              material.uniforms.uColor.value = [
+                new THREE.Color(x),
+                new THREE.Color(y),
+                new THREE.Color(z),
+              ];
+            } else if (self.progress < 2 / 6 && self.progress > 1 / 6) {
+              const { x, y, z } = interpolateColors(1, 2, self.progress);
+              material.uniforms.uColor.value = [
+                new THREE.Color(x),
+                new THREE.Color(y),
+                new THREE.Color(z),
+              ];
+            } else if (self.progress < 3 / 6 && self.progress > 2 / 6) {
+              const { x, y, z } = interpolateColors(2, 3, self.progress);
+              material.uniforms.uColor.value = [
+                new THREE.Color(x),
+                new THREE.Color(y),
+                new THREE.Color(z),
+              ];
+            } else if (self.progress < 4 / 6 && self.progress > 3 / 6) {
+              const { x, y, z } = interpolateColors(3, 4, self.progress);
+              material.uniforms.uColor.value = [
+                new THREE.Color(x),
+                new THREE.Color(y),
+                new THREE.Color(z),
+              ];
+            } else if (self.progress < 5 / 6 && self.progress > 4 / 6) {
+              const { x, y, z } = interpolateColors(4, 5, self.progress);
+              material.uniforms.uColor.value = [
+                new THREE.Color(x),
+                new THREE.Color(y),
+                new THREE.Color(z),
+              ];
+            }
+            // TODO: FIGURE OUT WHY THIS HAPPENS, ALL SCROLLS TRIGGER AT THE SAME TIME. ALSO, SCROLL 6+1 IS UNDEFINED...
+          },
         },
       });
       window.addEventListener("resize", () => {
@@ -96,6 +173,7 @@ const BackgroundCanvas = () => {
 
         renderer.setSize(width, height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        tick();
       });
     }
   }, []);

@@ -19,6 +19,7 @@ const Projects = () => {
         .timeline()
         .to(photos[index] as gsap.TweenTarget, { yPercent: 0 })
         .set(allPhotos[index] as gsap.TweenTarget, { autoAlpha: 0 });
+
       ScrollTrigger.create({
         trigger: `.trigger-${index}`,
         start: "center 99%",
@@ -36,15 +37,6 @@ const Projects = () => {
         animation: animation,
         scrub: true,
       });
-    });
-
-    gsap.to("#projects", {
-      scrollTrigger: {
-        trigger: "#projects",
-        pin: "#project-images",
-        start: "top top",
-        end: "bottom bottom",
-      },
     });
   }, []);
 
