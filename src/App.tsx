@@ -31,7 +31,7 @@ function App() {
   useGSAP(() => {
     gsap.to("#box-effect", {
       bottom: "100vh",
-      ease: "expo.inOut",
+      ease: "power4.inOut",
       duration: 1.5,
       delay: 0.5,
       onComplete: () => {
@@ -49,7 +49,7 @@ function App() {
         x: "0%",
         delay: 0.8,
         duration: 1,
-        ease: "power2.out",
+        ease: "power4.out",
       }
     );
     gsap.fromTo(
@@ -60,7 +60,7 @@ function App() {
         x: "0%",
         delay: 0.8,
         duration: 1,
-        ease: "power2.out",
+        ease: "power4.out",
       }
     );
   }, []);
