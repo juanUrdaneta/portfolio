@@ -49,7 +49,7 @@ function App() {
         x: "0%",
         delay: 0.8,
         duration: 1,
-        ease: "power2.in",
+        ease: "power2.out",
       }
     );
     gsap.fromTo(
@@ -60,7 +60,7 @@ function App() {
         x: "0%",
         delay: 0.8,
         duration: 1,
-        ease: "power2.in",
+        ease: "power2.out",
       }
     );
   }, []);

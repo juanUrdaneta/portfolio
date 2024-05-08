@@ -7,7 +7,7 @@ const Header = () => {
     gsap.to("#name-box", {
       opacity: 0,
       x: "-50%",
-      ease: "power2.in",
+      ease: "power2.out",
       scrollTrigger: {
         trigger: "#header",
         start: "top top",
@@ -17,7 +17,7 @@ const Header = () => {
     gsap.to("#description-box", {
       opacity: 0,
       x: "50%",
-      ease: "power2.in",
+      ease: "power2.out",
       scrollTrigger: {
         trigger: "#header",
         start: "top top",
