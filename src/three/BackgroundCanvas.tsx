@@ -5,7 +5,6 @@ import fragmentShader from "./shaders/test/fragment.glsl";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { COLORS_ARRAY, SB_COLOR } from "./colors";
-import { debounce } from "lodash";
 
 const interpolateColors = (startIndex: number, endIndex: number, progress: number) => {
   const newColorX = gsap.utils.interpolate(
