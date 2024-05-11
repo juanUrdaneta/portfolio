@@ -38,13 +38,21 @@ const Projects = () => {
         scrub: true,
       });
     });
+    gsap.to("#projects", {
+      scrollTrigger: {
+        trigger: "#projects",
+        pin: "#project-images",
+        start: "top top",
+        end: "bottom bottom",
+      },
+    });
   }, []);
 
   return (
     <>
       <div
         id="projects"
-        className="relative z-10 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
+        className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
       >
         <div className="hidden lg:flex w-full">
           <article className="w-1/2 justify-center ">
@@ -178,7 +186,7 @@ const Project = (props: {
         )}
       </div>
       <div className="flex w-full flex-col items-center justify-center">
-        <p className="text-black-soft font-chivo text-2xl italic text-center ">{props.name}</p>
+        <p className="text-black-soft font-openSans text-2xl italic text-center ">{props.name}</p>
         <div className="p-6">
           <p className="text-black-soft max-w-[500px] font-openSans text-center italic text-sm">
             {props.text}
@@ -193,7 +201,7 @@ const Project = (props: {
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
     <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)]">
-      <p className="text-black-soft font-chivo text-4xl italic text-left name-trigger ">
+      <p className="text-black-soft font-openSans text-4xl italic text-left name-trigger ">
         {props.name}
       </p>
       <div className="p-6 ">
