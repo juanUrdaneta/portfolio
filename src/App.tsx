@@ -11,6 +11,7 @@ import Lenis from "lenis";
 import BackgroundCanvas from "./three/BackgroundCanvas";
 import { ColorContext, FragmentShaderColorType } from "./context/colors";
 import { SB_COLOR } from "./three/colors";
+import AboutMe from "./sections/AboutMe";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,7 @@ function App() {
           ></div> */}
           <BackgroundCanvas />
           <Header />
+          <AboutMe />
           <Projects />
           <Techstack />
           <Resume />
