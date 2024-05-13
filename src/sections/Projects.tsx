@@ -11,8 +11,8 @@ const Projects = () => {
     const photosObj = gsap.utils.toArray(".desktop-image-obj").slice(1);
     const details = gsap.utils.toArray(".desktop-detail");
     const allPhotos = gsap.utils.toArray(".desktop-image");
-    gsap.set(photos, { yPercent: 150 });
-    gsap.set(photosObj, { yPercent: -150 });
+    gsap.set(photos, { yPercent: 100 });
+    gsap.set(photosObj, { yPercent: -100 });
 
     details.forEach((_, index) => {
       const animation = gsap
@@ -198,10 +198,12 @@ const Project = (props: {
 
 const DesktopProject = (props: { name: string; text: string }) => {
   return (
-    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-[calc(100vh-6rem)]">
-      <p className="text-black-soft font-archivo text-3xl text-left name-trigger ">{props.name}</p>
+    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-screen">
+      <p className="text-black-soft font-openSans font-bold text-3xl text-left name-trigger ">
+        {props.name}
+      </p>
       <div className="p-6 ">
-        <p className="text-black-soft max-w-[500px] font-openSans text-left italic text-md  ">
+        <p className="text-black-soft max-w-[500px] font-openSans text-justify text-lg  ">
           {props.text}
         </p>
       </div>
