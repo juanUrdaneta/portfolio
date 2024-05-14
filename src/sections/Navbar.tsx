@@ -5,7 +5,7 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.fromTo(
       "#header-nav-name",
-      { y: "8rem" },
+      { y: "7rem" },
       {
         y: 0,
         fontSize: "2rem",
@@ -54,14 +54,14 @@ const Navbar = () => {
       // style={{ backgroundColor: "#141516" }}
       className="w-screen h-20 fixed top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-lg "
     >
-      <nav className="relative flex justify-between items-center w-[1200px] max-w-screen">
+      <nav className="relative flex justify-between items-center w-[1600px] max-w-screen">
         <p id="header-career" className="uppercase font-interText text-white-bone">
           Software engineer / Creative Developer
         </p>
         <p
           id="header-nav-name"
-          style={{ fontWeight: 900 }}
-          className="absolute w-full font-interText uppercase text-6xl xl:text-9xl text-white-bone text-center "
+          style={{ fontWeight: 900, fontSize: "9.7vw" }}
+          className="absolute w-full font-interText tracking-wide uppercase  text-white-bone text-center "
         >
           Juan Urdaneta
         </p>

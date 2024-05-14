@@ -37,7 +37,7 @@ const Header = () => {
       id="header"
       className="relative w-screen h-screen  flex flex-col justify-start overflow-hidden z-10  bg-black-soft"
     >
-      <div id="header-content" className="w-full h-full flex flex-col">
+      <div id="header-content" className="w-full h-full flex justify-center items-center flex-col">
         <section className="w-full flex flex-col md:flex-row justify-center md:items-center ">
           <div className="w-full" id="name-box">
             {/* <h1 className=" text-left md:text-center font-archivo font-thin md:text-4xl lg:text-[120px] text-2xl select-none text-white-bone mb-6 ">
@@ -48,18 +48,21 @@ const Header = () => {
             </p>
           </div>
         </section>
-        <div>
-          <h2 className="text-white-bone font-interText font-bold ml-10 mb-4 text-md uppercase">
+        <div className="w-full max-w-[1600px] ">
+          <h2 className="text-white-bone  font-interText font-bold  mb-4 text-md uppercase">
             My recent Projects
           </h2>
         </div>
-        <section id="cta" className="flex flex-grow px-10 pb-2 gap-5">
+        <section
+          id="cta"
+          className="flex flex-grow w-full max-w-[1600px] justify-center pb-2 gap-5"
+        >
           <ProjectCTA name="Shortbread AI" pic="shortbread.jpeg" />
           <ProjectCTA name="Climatika" pic="climatika.png" />
           <ProjectCTA name="Dvinum" pic="dvinum.jpeg" />
         </section>
         <div className="flex justify-center items-start h-16 ">
-          <button className="w-64 h-12 text-black-soft transition-all rounded-xl bg-white-bone hover:bg-white-bone/80 ">
+          <button className="w-64 h-12 text-black-soft transition-all duration-500 rounded-xl bg-white-bone hover:bg-white-bone/80 ">
             <a href="mailto:urdntjuan@gmail.com">Let's work together!</a>
           </button>
         </div>
