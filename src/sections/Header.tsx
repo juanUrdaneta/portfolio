@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLenis } from "lenis/react";
 import React from "react";
 
 const Header = () => {

@@ -59,42 +59,60 @@ const Projects = () => {
             Recent <br /> Projects
           </h2>
         </div> */}
-        <div className="hidden lg:flex w-full ">
+        <div className="hidden lg:flex w-full justify-center ">
           {/* <div className="w-full lg:flex"> */}
-          <article className="w-1/2 justify-center ">
-            <DesktopProject
+          <article className="w-full max-w-[1600px] ">
+            <DesktopProjectB
+              stack={["React", "Nextjs", "Tailwind"]}
+              img="shortbread.jpeg"
+              selectorId="shortbread"
               name="Shortbread.ai Engine"
               text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             />
             <div className="trigger-0"></div>
-            <DesktopProject
+            <DesktopProjectB
+              stack={["React", "React Native", "AWS"]}
               name="GrocerSave App"
+              left
+              img="shortbread.jpeg"
               text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
               Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
             />
             <div className="trigger-1"></div>
-            <DesktopProject
+            <DesktopProjectB
+              stack={["React", "Nextjs", "Tailwind"]}
               name="Incept Landing Page"
+              img="incept.webp"
               text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             />
             <div className="trigger-2"></div>
-            <DesktopProject
+            <DesktopProjectB
+              stack={["React", "Nextjs", "Firebase"]}
               name="Climatika App"
+              left
+              selectorId="climatika"
+              img="climatika.png"
               text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
             />
 
             <div className="trigger-3"></div>
-            <DesktopProject
+            <DesktopProjectB
+              stack={["Angular", "Firebase"]}
               name="Dvinum"
+              selectorId="dvinum"
+              img="dvinum.jpeg"
               text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             />
             <div className="trigger-4"></div>
-            <DesktopProject
+            <DesktopProjectB
+              stack={["React", "React Native", "Firebase"]}
               name="Mesa Premium"
+              left
+              img="mesap.png"
               text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
             />
           </article>
-          <div
+          {/* <div
             id="project-images"
             className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
           >
@@ -109,7 +127,7 @@ const Projects = () => {
               <DesktopProjectImg img="dvinum.jpeg" />
               <DesktopProjectImg img="mesap.png" />
             </div>
-          </div>
+          </div> */}
           {/* </div> */}
         </div>
         {/* mobile content */}
@@ -237,6 +255,60 @@ const DesktopProjectImg = (props: { img: string; grocer?: boolean }) => {
         alt="img"
         className={`max-w-[${IMAGE_WIDTH}] w-[${IMAGE_WIDTH}] h-[${IMAGE_HEIGHT}] absolute desktop-image-obj object-cover`}
       />
+    </div>
+  );
+};
+type StackKeywords =
+  | "Angular"
+  | "Tailwind"
+  | "React"
+  | "Nextjs"
+  | "AWS"
+  | "Firebase"
+  | "React Native";
+
+const DesktopProjectB = (props: {
+  name: string;
+  text: string;
+  img: string;
+  selectorId?: string;
+  stack: StackKeywords[];
+  left?: boolean;
+}) => {
+  return (
+    <div
+      id={props.selectorId + "-selector"}
+      className={`flex justify-center w-full h-[80vh] ${props.left ? "flex-row-reverse" : ""}`}
+    >
+      <div className="relative w-7/12">
+        <div className="overflow-hidden shadow-xl mb-4 rounded">
+          <img
+            src={props.img}
+            alt="img"
+            className={`max-w-[60vw] w-full h-[60vh] object-cover  hover:scale-105 transition-all duration-500`}
+          />
+        </div>
+        <p className="text-black-soft font-openSans text-left max-w-[90%] text-md ">{props.text}</p>
+      </div>
+      <div
+        className={`px-14 w-5/12 h-[60vh] flex justify-end  ${
+          props.left ? "items-end" : " items-start"
+        } flex-col`}
+      >
+        <p className="text-black-soft/70 mb-6 font-openSans select-none">
+          {props.stack.join(" - ")}
+        </p>
+        <p
+          className={`text-black-soft mb-8 font-inter font-light text-8xl ${
+            props.left ? "text-right" : "text-left"
+          } name-trigger`}
+        >
+          {props.name}
+        </p>
+        <button className="w-44 h-12 bg-black-soft hover:bg-black-soft/80 transition-all rounded-xl text-white-bone">
+          See live
+        </button>
+      </div>
     </div>
   );
 };

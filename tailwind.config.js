@@ -14,6 +14,7 @@ export default {
         general: ["General", "sans-serif"],
         openSans: ["Open Sans", "sans-serif"],
         archivo: ["Archivo Black", "sans-serif"],
+        inter: ["InterDisplay", "sans-serif"],
       },
     },
   },

@@ -16,9 +16,9 @@ const Techstack = () => {
   return (
     <div
       id="techstack"
-      className="w-screen flex flex-col justify-center items-center bg-black-soft sticky top-24 z-20 mt-[-1px] border-t border-t-black-soft "
+      className="w-screen h-72 flex flex-col justify-center items-center bg-black-soft  border-t border-t-black-soft "
     >
-      <section
+      {/* <section
         id="innerTechstack"
         className="w-full max-w-[1200px] my-2 flex justify-around md:justify-between py-4 flex-wrap"
       >
@@ -27,7 +27,7 @@ const Techstack = () => {
         <img src="tailwindcss.svg" className="w-[100px] md:w-[150px] grayscale invert" />
         <img src="firebase.svg" className="w-[100px] md:w-[150px] grayscale" />
         <img src="aws.svg" className="w-[100px] md:w-[150px] grayscale invert" />
-      </section>
+      </section> */}
     </div>
   );
 };
