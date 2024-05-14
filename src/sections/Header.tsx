@@ -5,41 +5,30 @@ const Header = () => {
   useGSAP(() => {
     // recurrent
     gsap.to("#name-box", {
-      y: "45vh",
-      ease: "sine.out",
+      y: "100vh",
+      opacity: 0.4,
+      scale: 0.9,
+      ease: "linear",
       scrollTrigger: {
         trigger: "#header",
         start: "top top",
         scrub: true,
       },
     });
-    // gsap.to("#description-box", {
-    //   x: "50%",
-    //   ease: "power4.out",
-    //   scrollTrigger: {
-    //     trigger: "#header",
-    //     start: "top top",
-    //     scrub: true,
-    //   },
-    // });
-    // gsap.to("#name-box", {
-    //   opacity: 0,
-    //   ease: "sine.out",
-    //   scrollTrigger: {
-    //     trigger: "#header",
-    //     start: "top top",
-    //     scrub: true,
-    //   },
-    // });
-    // gsap.to("#description-box", {
-    //   opacity: 0,
-    //   ease: "sine.out",
-    //   scrollTrigger: {
-    //     trigger: "#header",
-    //     start: "top top",
-    //     scrub: true,
-    //   },
-    // });
+    gsap.to("#scroll-down-indicator", {
+      y: "100vh",
+      ease: "linear",
+      scrollTrigger: {
+        trigger: "#header",
+        start: "top top",
+        scrub: true,
+      },
+    });
+    gsap.to("#scroll-down-indicator", {
+      opacity: 1,
+      ease: "sine.out",
+      delay: 3,
+    });
   }, []);
 
   return (
@@ -56,27 +45,17 @@ const Header = () => {
             Software Engineer
           </p>
         </div>
-        {/* <div className="w-16"></div> */}
-        {/* <div
-          id="description-box"
-          className="h-fit flex flex-col justify-center items-start mt-12 w-3/4 md:w-1/2 px-8 md:px-0 "
-        >
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
-            As a seasoned Front-End Engineer, I am deeply committed to solving complex problems
-          </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
-            and transforming business ideas into tangible products.
-          </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
-            With a keen focus on collaboration, I excel in partnering with Product Managers
-          </p>
-          <p className=" text-white-bone text-sm md:text-xl font-openSans font-thin select-none bg-transparent md:mb-2 pr-6 text-left ">
-            and Graphic Designers to refine and iterate on solutions, ensuring that the user
-            experience is optimized to its fullest potential.
-          </p>
-        </div> */}
       </section>
-      <div></div>
+      <div
+        id="scroll-down-indicator"
+        className="absolute bottom-10 self-center hidden md:flex opacity-0"
+      >
+        <img
+          src={"scrolldown.svg"}
+          alt="sroll down indicator"
+          className="w-[50px] h-auto invert animate-bounce "
+        />
+      </div>
     </div>
   );
 };

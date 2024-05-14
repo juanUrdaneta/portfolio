@@ -47,8 +47,8 @@ function App() {
       { opacity: 0 },
       {
         opacity: 1,
-        delay: 1.6,
-        duration: 1.2,
+        delay: 0.6,
+        duration: 2,
         ease: "sine.out",
       }
     );

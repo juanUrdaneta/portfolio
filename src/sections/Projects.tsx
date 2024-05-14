@@ -2,8 +2,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-const IMAGE_WIDTH = "500px";
-const IMAGE_HEIGHT = "500px";
+const IMAGE_WIDTH = "40vw";
+const IMAGE_HEIGHT = "40vh";
 
 const Projects = () => {
   useGSAP(() => {
@@ -54,61 +54,63 @@ const Projects = () => {
         id="projects"
         className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
       >
-        <div className="hidden lg:flex w-full">
-          <div className="w-1/4 h-screen flex justify-end items-center sticky top-0 ">
-            <h2 className="font-archivo text-6xl text-right">My Projects</h2>
-          </div>
-          <div className="w-full lg:flex">
-            <article className="w-1/2 justify-center ">
-              <DesktopProject
-                name="Shortbread.ai Engine"
-                text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
-              />
-              <div className="trigger-0"></div>
-              <DesktopProject
-                name="GrocerSave App"
-                text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
+        {/* <div className="w-full flex justify-start items-center ">
+          <h2 className="font-archivo text-6xl text-left select-none uppercase">
+            Recent <br /> Projects
+          </h2>
+        </div> */}
+        <div className="hidden lg:flex w-full ">
+          {/* <div className="w-full lg:flex"> */}
+          <article className="w-1/2 justify-center ">
+            <DesktopProject
+              name="Shortbread.ai Engine"
+              text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
+            />
+            <div className="trigger-0"></div>
+            <DesktopProject
+              name="GrocerSave App"
+              text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
               Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
-              />
-              <div className="trigger-1"></div>
-              <DesktopProject
-                name="Incept Landing Page"
-                text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
-              />
-              <div className="trigger-2"></div>
-              <DesktopProject
-                name="Climatika App"
-                text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
-              />
+            />
+            <div className="trigger-1"></div>
+            <DesktopProject
+              name="Incept Landing Page"
+              text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
+            />
+            <div className="trigger-2"></div>
+            <DesktopProject
+              name="Climatika App"
+              text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
+            />
 
-              <div className="trigger-3"></div>
-              <DesktopProject
-                name="Dvinum"
-                text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
-              />
-              <div className="trigger-4"></div>
-              <DesktopProject
-                name="Mesa Premium"
-                text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
-              />
-            </article>
+            <div className="trigger-3"></div>
+            <DesktopProject
+              name="Dvinum"
+              text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
+            />
+            <div className="trigger-4"></div>
+            <DesktopProject
+              name="Mesa Premium"
+              text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
+            />
+          </article>
+          <div
+            id="project-images"
+            className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
+          >
             <div
-              id="project-images"
-              className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
+              id="image-container"
+              className={`h-[40vh] max-h-[40vh] w-[40vw] max-w-[40vw] relative rounded-lg overflow-hidden shadow-xl`}
             >
-              <div
-                id="image-container"
-                className={`h-[500px] max-h-[500px] w-[500px] max-w-[500px] relative rounded-lg overflow-hidden shadow-xl`}
-              >
-                <DesktopProjectImg img="shortbread.jpeg" />
-                <DesktopProjectImg img="N/A" grocer />
-                <DesktopProjectImg img="incept.webp" />
-                <DesktopProjectImg img="climatika.png" />
-                <DesktopProjectImg img="dvinum.jpeg" />
-                <DesktopProjectImg img="mesap.png" />
-              </div>
+              <DesktopProjectImg img="shortbread.jpeg" />
+              <DesktopProjectImg img="N/A" grocer />
+              <DesktopProjectImg img="incept.webp" />
+              <DesktopProjectImg img="climatika.png" />
+              <DesktopProjectImg img="dvinum.jpeg" />
+              <DesktopProjectImg img="mesap.png" />
             </div>
           </div>
+          {/* </div> */}
         </div>
         {/* mobile content */}
         <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block lg:hidden ">
