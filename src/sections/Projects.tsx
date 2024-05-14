@@ -2,9 +2,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-const IMAGE_WIDTH = "40vw";
-const IMAGE_HEIGHT = "40vh";
-
 const Projects = () => {
   useGSAP(() => {
     const photos = gsap.utils.toArray(".desktop-image:not(:first-child)");
@@ -54,11 +51,12 @@ const Projects = () => {
         id="projects"
         className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
       >
-        {/* <div className="w-full flex justify-start items-center ">
-          <h2 className="font-archivo text-6xl text-left select-none uppercase">
-            Recent <br /> Projects
+        <div className="w-full flex justify-start items-center max-w-[1600px] ">
+          <h2 className="font-inter text-8xl mb-24 text-left select-none uppercase">
+            Recent <br />
+            <span className="pl-24">Projects</span>
           </h2>
-        </div> */}
+        </div>
         <div className="hidden lg:flex w-full justify-center ">
           {/* <div className="w-full lg:flex"> */}
           <article className="w-full max-w-[1600px] ">
@@ -112,23 +110,6 @@ const Projects = () => {
               text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
             />
           </article>
-          {/* <div
-            id="project-images"
-            className="w-1/2 overflow-hidden h-screen flex justify-center items-center "
-          >
-            <div
-              id="image-container"
-              className={`h-[40vh] max-h-[40vh] w-[40vw] max-w-[40vw] relative rounded-lg overflow-hidden shadow-xl`}
-            >
-              <DesktopProjectImg img="shortbread.jpeg" />
-              <DesktopProjectImg img="N/A" grocer />
-              <DesktopProjectImg img="incept.webp" />
-              <DesktopProjectImg img="climatika.png" />
-              <DesktopProjectImg img="dvinum.jpeg" />
-              <DesktopProjectImg img="mesap.png" />
-            </div>
-          </div> */}
-          {/* </div> */}
         </div>
         {/* mobile content */}
         <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block lg:hidden ">
@@ -212,49 +193,6 @@ const Project = (props: {
         </div>
       </div>
       <hr className="border-black-soft mx-4 opacity-20" />
-    </div>
-  );
-};
-
-const DesktopProject = (props: { name: string; text: string }) => {
-  return (
-    <div className="flex flex-col items-center justify-center  desktop-detail w-full h-screen">
-      <p className="text-black-soft font-openSans font-bold text-3xl text-left name-trigger ">
-        {props.name}
-      </p>
-      <div className="p-6 ">
-        <p className="text-black-soft max-w-[500px] font-openSans text-justify text-lg  ">
-          {props.text}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const DesktopProjectImg = (props: { img: string; grocer?: boolean }) => {
-  if (props.grocer) {
-    return (
-      <div
-        className={`flex flex-col items-center justify-center desktop-image absolute w-[${IMAGE_WIDTH}] h-[${IMAGE_HEIGHT}] top-0 left-0 overflow-hidden `}
-      >
-        <div
-          className={`bg-[#659952] w-[${IMAGE_WIDTH}] h-[${IMAGE_HEIGHT}] flex justify-center items-center flex-col absolute top-0 left-0 desktop-image-obj `}
-        >
-          <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
-          <p className="text-black-soft font-chivo text-2xl italic text-left ">Grocersave</p>
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div
-      className={`flex flex-col items-center justify-center desktop-image w-[${IMAGE_WIDTH}] h-[${IMAGE_HEIGHT}] top-0 left-0 overflow-hidden absolute`}
-    >
-      <img
-        src={props.img}
-        alt="img"
-        className={`max-w-[${IMAGE_WIDTH}] w-[${IMAGE_WIDTH}] h-[${IMAGE_HEIGHT}] absolute desktop-image-obj object-cover`}
-      />
     </div>
   );
 };

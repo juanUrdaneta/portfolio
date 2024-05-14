@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useLenis } from "lenis/react";
 import React from "react";
 
 const Header = () => {
@@ -44,13 +43,13 @@ const Header = () => {
             {/* <h1 className=" text-left md:text-center font-archivo font-thin md:text-4xl lg:text-[120px] text-2xl select-none text-white-bone mb-6 ">
             Juan Urdaneta
           </h1> */}
-            <p className="text-white-bone text-xl md:text-center md:text-4xl font-archivo font-thin select-none mt-56 ">
-              Software Engineer
+            <p className="text-white-bone text-xl md:text-center md:text-3xl font-inter font-bold select-none mt-56 ">
+              Software Engineer and creative developer
             </p>
           </div>
         </section>
         <div>
-          <h2 className="text-white-bone font-archivo ml-10 mb-4 text-xl">My Projects</h2>
+          <h2 className="text-white-bone font-inter font-bold ml-10 mb-4 text-2xl">My Projects</h2>
         </div>
         <section id="cta" className="flex flex-grow px-10 pb-10 gap-5">
           <ProjectCTA name="Shortbread AI" pic="shortbread.jpeg" />
