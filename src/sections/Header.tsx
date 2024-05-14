@@ -48,7 +48,10 @@ const Header = () => {
             </p>
           </div>
         </section>
-        <section id="cta" className="flex flex-grow p-10 gap-5">
+        <div>
+          <h2 className="text-white-bone font-archivo ml-10 mb-4 text-xl">My Projects</h2>
+        </div>
+        <section id="cta" className="flex flex-grow px-10 pb-10 gap-5">
           <ProjectCTA name="Shortbread AI" pic="shortbread.jpeg" />
           <ProjectCTA name="Climatika" pic="climatika.png" />
           <ProjectCTA name="Dvinum" pic="dvinum.jpeg" />
