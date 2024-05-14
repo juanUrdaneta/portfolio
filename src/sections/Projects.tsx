@@ -63,6 +63,7 @@ const Projects = () => {
             <DesktopProjectB
               stack={["React", "Nextjs", "Tailwind"]}
               img="shortbread.jpeg"
+              url="https://create.shortbread.ai"
               selectorId="shortbread"
               name="Shortbread.ai Engine"
               text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
@@ -80,6 +81,7 @@ const Projects = () => {
             <DesktopProjectB
               stack={["React", "Nextjs", "Tailwind"]}
               name="Incept Landing Page"
+              url="https://incept-landing-git-main-anemolo.vercel.app/"
               img="incept.webp"
               text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             />
@@ -87,6 +89,7 @@ const Projects = () => {
             <DesktopProjectB
               stack={["React", "Nextjs", "Firebase"]}
               name="Climatika App"
+              url="https://config.glassbygaviota.com/climatika"
               left
               selectorId="climatika"
               img="climatika.png"
@@ -97,6 +100,7 @@ const Projects = () => {
             <DesktopProjectB
               stack={["Angular", "Firebase"]}
               name="Dvinum"
+              url="https://app.dvinum.es/id/Sv6raUSulwRS3DN5MgBAnMHUhex2"
               selectorId="dvinum"
               img="dvinum.jpeg"
               text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
@@ -211,6 +215,7 @@ const DesktopProjectB = (props: {
   img: string;
   selectorId?: string;
   stack: StackKeywords[];
+  url?: string;
   left?: boolean;
 }) => {
   return (
@@ -226,7 +231,9 @@ const DesktopProjectB = (props: {
             className={`max-w-[60vw] w-full h-[60vh] object-cover  hover:scale-105 transition-all duration-500`}
           />
         </div>
-        <p className="text-black-soft font-openSans text-left max-w-[90%] text-md ">{props.text}</p>
+        <p className="text-black-soft font-inter font-thin text-left max-w-[90%] text-md ">
+          {props.text}
+        </p>
       </div>
       <div
         className={`px-14 w-5/12 h-[60vh] flex justify-end  ${
@@ -243,9 +250,19 @@ const DesktopProjectB = (props: {
         >
           {props.name}
         </p>
-        <button className="w-44 h-12 bg-black-soft hover:bg-black-soft/80 transition-all rounded-xl text-white-bone">
-          See live
-        </button>
+        {props.url ? (
+          <a target="_blank" href={props.url}>
+            <button className="w-44 h-12 bg-black-soft hover:bg-black-soft/80 transition-all rounded-xl text-white-bone">
+              See live
+            </button>
+          </a>
+        ) : (
+          <a href="mailto:urdntjuan@gmail.com">
+            <button className="w-64 h-12 text-white-bone transition-all duration-500 rounded-xl bg-black-soft hover:bg-black-soft/80 ">
+              Let's work together!
+            </button>
+          </a>
+        )}
       </div>
     </div>
   );
