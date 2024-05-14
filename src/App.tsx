@@ -12,6 +12,7 @@ import BackgroundCanvas from "./three/BackgroundCanvas";
 import { ColorContext, FragmentShaderColorType } from "./context/colors";
 import { SB_COLOR } from "./three/colors";
 import AboutMe from "./sections/AboutMe";
+import Navbar from "./sections/Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +63,7 @@ function App() {
             id="box-effect"
             className="fixed bottom-0 w-screen h-screen bg-black-soft z-[20]"
           ></div> */}
+          <Navbar />
           <BackgroundCanvas />
           <Header />
           <AboutMe />

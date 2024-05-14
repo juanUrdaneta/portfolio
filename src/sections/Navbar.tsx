@@ -1,79 +1,75 @@
-import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
-  const [mobileNavto, setMobileNavTo] = React.useState<"Contact" | "Projects">("Contact");
   useGSAP(() => {
     gsap.fromTo(
-      "#navbar",
-      { opacity: 0 },
+      "#header-nav-name",
+      { y: "8rem" },
       {
-        opacity: 1,
-
+        y: 0,
+        fontSize: "2rem",
         scrollTrigger: {
-          trigger: "#name-box",
+          trigger: "#header",
           start: "top top",
           scrub: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            console.log(progress);
+            if (progress > 0.9) {
+              gsap.to("#header-career", {
+                color: "#141516",
+              });
+              gsap.to("#header-email", {
+                color: "#141516",
+              });
+              gsap.to("#header-nav-name", {
+                color: "#141516",
+              });
+              gsap.to("#navbar", {
+                backgroundColor: "rgba(249,246,238,0.6)",
+              });
+            } else {
+              gsap.to("#header-career", {
+                color: "#f9f6ee",
+              });
+              gsap.to("#header-email", {
+                color: "#f9f6ee",
+              });
+              gsap.to("#header-nav-name", {
+                color: "#f9f6ee",
+              });
+              gsap.to("#navbar", {
+                backgroundColor: "#141516",
+              });
+            }
+          },
         },
       }
     );
-    gsap.to("#navbar", {
-      scrollTrigger: {
-        trigger: "#projects",
-        start: "top center",
-        onEnter: () => {
-          setMobileNavTo("Contact");
-        },
-      },
-    });
-    gsap.to("#navbar", {
-      scrollTrigger: {
-        trigger: "#resume",
-        start: "top center",
-        onEnter: () => {
-          setMobileNavTo("Projects");
-        },
-      },
-    });
   }, []);
   return (
     <div
       id="navbar"
       // style={{ backgroundColor: "#141516" }}
-      className="w-screen h-20 sticky top-0 z-50 mt-[-1px] flex justify-center backdrop-brightness-50 bg-white-bone border-b border-b-black-soft "
+      className="w-screen h-20 fixed top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-lg "
     >
-      <nav className="flex justify-center items-center w-[1200px] max-w-screen">
-        <p className="text-black-soft text-xl md:text-3xl font-general font-light ml-4">
+      <nav className="relative flex justify-between items-center w-[1200px] max-w-screen">
+        <p id="header-career" className="uppercase font-interText text-white-bone">
+          Software engineer / Creative Developer
+        </p>
+        <p
+          id="header-nav-name"
+          style={{ fontWeight: 900 }}
+          className="absolute w-full font-interText uppercase text-6xl xl:text-9xl text-white-bone text-center "
+        >
           Juan Urdaneta
         </p>
-        <div className=" md:hidden justify-center items-center hidden ">
-          <a
-            href={`#${mobileNavto === "Contact" ? "resume" : "projects"}`}
-            className="text-black-soft font-general font-light underline underline-offset-4 mr-4"
-            onClick={() => {
-              if (mobileNavto === "Projects") {
-                setTimeout(() => {
-                  setMobileNavTo("Contact");
-                }, 1);
-              }
-            }}
-          >
-            {mobileNavto === "Contact" ? "Contact" : "Projects"}
+        <p id="header-email" className="font-interText text-white-bone ">
+          <a className="decoration" href="mailto:urdntjuan@gmail.com">
+            urdntjuan@gmail.com
           </a>
-        </div>
-        <ul className="justify-between text-black-soft w-[160px] hidden md:hidden pr-4 ">
-          <li className="">
-            <a href="#projects" className="text-black-soft font-general font-light">
-              Projects
-            </a>
-          </li>
-          <li className="">
-            <a href="#resume" className="text-black-soft font-general font-light">
-              Contact
-            </a>
-          </li>
-        </ul>
+        </p>
       </nav>
     </div>
   );

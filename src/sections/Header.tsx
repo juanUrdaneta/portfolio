@@ -6,7 +6,7 @@ const Header = () => {
   useGSAP(() => {
     // recurrent
     gsap.to("#header-content", {
-      y: "100vh",
+      y: "80vh",
       opacity: 0.4,
       scale: 0.9,
       ease: "linear",
@@ -43,13 +43,15 @@ const Header = () => {
             {/* <h1 className=" text-left md:text-center font-archivo font-thin md:text-4xl lg:text-[120px] text-2xl select-none text-white-bone mb-6 ">
             Juan Urdaneta
           </h1> */}
-            <p className="text-white-bone text-xl md:text-center md:text-3xl font-inter font-bold select-none mt-56 ">
+            <p className="text-white-bone text-xl md:text-center md:text-lg font-inter font-thin select-none mt-56 ">
               Software Engineer and creative developer
             </p>
           </div>
         </section>
         <div>
-          <h2 className="text-white-bone font-inter font-bold ml-10 mb-4 text-2xl">My Projects</h2>
+          <h2 className="text-white-bone font-interText font-bold ml-10 mb-4 text-md uppercase">
+            My recent Projects
+          </h2>
         </div>
         <section id="cta" className="flex flex-grow px-10 pb-2 gap-5">
           <ProjectCTA name="Shortbread AI" pic="shortbread.jpeg" />
@@ -58,7 +60,7 @@ const Header = () => {
         </section>
         <div className="flex justify-center items-start h-16 ">
           <button className="w-64 h-12 text-black-soft transition-all rounded-xl bg-white-bone hover:bg-white-bone/80 ">
-            Let's work together!
+            <a href="mailto:urdntjuan@gmail.com">Let's work together!</a>
           </button>
         </div>
       </div>
@@ -91,7 +93,7 @@ const ProjectCTA = ({ name, pic }: { name: string; pic: string }) => {
           src={pic}
           alt={name}
           className={`w-full h-full object-cover ${
-            hasMouseEntered ? "grayscale-0 scale-105" : "grayscale "
+            hasMouseEntered ? "grayscale-0 scale-105" : "grayscale-0 "
           } transition-all duration-300`}
         />
         {/* <div
@@ -102,7 +104,9 @@ const ProjectCTA = ({ name, pic }: { name: string; pic: string }) => {
         <p className="font-archivo text-6xl text-black-soft">{name}</p>
       </div> */}
       </div>
-      <p className="text-white-bone w-full h-22 font-openSans text-center py-4">{name}</p>
+      <p className="text-white-bone w-full h-22 font-inter   font-semibold uppercase text-center py-4">
+        {name}
+      </p>
     </div>
   );
 };
