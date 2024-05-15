@@ -17,12 +17,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [color, setColor] = React.useState<FragmentShaderColorType>(SB_COLOR);
-
+  const lenisRef = React.useRef<Lenis>(null);
   React.useEffect(() => {
     const lenis = new Lenis({ lerp: 0.1 });
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    lenisRef.current = lenis;
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
@@ -60,7 +61,11 @@ function App() {
         <main id="main-box" className="relative">
           <Navbar />
           <BackgroundCanvas />
-          <Header />
+          <Header
+            scrollTo={(selector: string) => {
+              lenisRef.current?.scrollTo(selector);
+            }}
+          />
           <AboutMe />
           <Projects />
           <div className=" relative w-full h-72 backdrop-invert bg-[#949596]/20"></div>

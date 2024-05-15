@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
 
-const Header = () => {
+const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
   useGSAP(() => {
     // recurrent
     gsap.to("#header-content", {
@@ -54,9 +54,23 @@ const Header = () => {
           id="cta"
           className="flex flex-grow w-full max-w-[1600px] justify-center pb-2 gap-5"
         >
-          <ProjectCTA name="Shortbread AI" pic="shortbread.jpeg" />
-          <ProjectCTA name="Climatika" pic="climatika.png" cn="hidden min-[800px]:flex" />
-          <ProjectCTA name="Dvinum" pic="dvinum.jpeg" cn="hidden min-[1000px]:flex" />
+          <ProjectCTA
+            onClick={() => scrollTo("#shortbread-selector")}
+            name="Shortbread AI"
+            pic="shortbread.jpeg"
+          />
+          <ProjectCTA
+            onClick={() => scrollTo("#climatika-selector")}
+            name="Climatika"
+            pic="climatika.png"
+            cn="hidden min-[800px]:flex"
+          />
+          <ProjectCTA
+            onClick={() => scrollTo("#dvinum-selector")}
+            name="Dvinum"
+            pic="dvinum.jpeg"
+            cn="hidden min-[1000px]:flex"
+          />
         </section>
         <div className="flex justify-center items-start h-16 ">
           <a href="mailto:urdntjuan@gmail.com">
@@ -72,10 +86,20 @@ const Header = () => {
 
 export default Header;
 
-const ProjectCTA = ({ name, pic, cn }: { name: string; pic: string; cn?: string }) => {
+const ProjectCTA = ({
+  name,
+  pic,
+  cn,
+  onClick,
+}: {
+  name: string;
+  pic: string;
+  onClick: () => void;
+  cn?: string;
+}) => {
   const [hasMouseEntered, setMouseEntered] = React.useState(false);
   return (
-    <div className={`relative h-full w-full flex flex-col ${cn}`}>
+    <div onClick={onClick} className={`relative h-full w-full flex flex-col ${cn}`}>
       <div
         onMouseEnter={() => setMouseEntered(true)}
         onMouseLeave={() => setMouseEntered(false)}
