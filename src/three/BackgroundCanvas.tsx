@@ -175,7 +175,7 @@ const BackgroundCanvas = () => {
     }
   }, []);
   return (
-    <div className="sticky top-0 z-0 w-screen h-0 bg-transparent  ">
+    <div className="sticky top-0 z-0 hidden md:flex w-screen h-0 bg-transparent  ">
       <canvas style={{ width: "100%", height: "100%" }} ref={canvasRef}></canvas>
     </div>
   );

@@ -61,7 +61,7 @@ const Navbar = () => {
         </p>
         <p
           id="header-nav-name"
-          className="absolute w-full font-interText font-extrabold max-[930px]:text-7xl max-[1210px]:text-8xl text-9xl tracking-wide uppercase select-none text-white-bone text-left md:text-center "
+          className="absolute w-full font-interText font-extrabold max-[600px]:text-5xl max-[930px]:text-7xl max-[1210px]:text-8xl text-9xl tracking-wide uppercase select-none text-white-bone text-left md:text-center "
         >
           Juan Urdaneta
         </p>

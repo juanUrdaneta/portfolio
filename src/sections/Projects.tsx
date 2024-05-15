@@ -52,7 +52,7 @@ const Projects = () => {
         className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent max-[1600px]:px-8 mt-10 md:mt-0"
       >
         <div className="w-full flex justify-start items-center max-w-[1600px] ">
-          <h2 className="font-inter font-semibold text-5xl md:text-8xl mb-10 md:mb-24 text-left select-none uppercase">
+          <h2 className="font-inter font-semibold text-3xl md:text-8xl mb-10 md:mb-24 text-left select-none uppercase">
             Recent <br />
             <span className="pl-24">Projects</span>
           </h2>

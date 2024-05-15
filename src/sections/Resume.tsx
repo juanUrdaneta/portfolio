@@ -83,7 +83,7 @@ const Resume = () => {
           </div>
         </div>
         <div className="w-full h-full flex flex-col lg:flex-row justify-start items-center gap-12 mb-24 ">
-          <h2 className="font-inter font-semibold text-8xl  mb-12 text-left select-none uppercase">
+          <h2 className="font-inter font-semibold text-3xl md:text-8xl  mb-12 text-left select-none uppercase">
             Let's get <br />
             <span className="pl-20">Talking!</span>
           </h2>
