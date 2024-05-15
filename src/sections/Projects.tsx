@@ -69,18 +69,19 @@ const Projects = () => {
               text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             />
             <div className="trigger-0"></div>
-            <DesktopProjectB
+            {/* <DesktopProjectB
               stack={["React", "React Native", "AWS"]}
               name="GrocerSave App"
               left
               img="shortbread.jpeg"
               text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
               Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
-            />
+            /> */}
             <div className="trigger-1"></div>
             <DesktopProjectB
               stack={["React", "Nextjs", "Tailwind"]}
               name="Incept Landing Page"
+              left
               url="https://incept-landing-git-main-anemolo.vercel.app/"
               img="incept.webp"
               text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
@@ -90,7 +91,6 @@ const Projects = () => {
               stack={["React", "Nextjs", "Firebase"]}
               name="Climatika App"
               url="https://config.glassbygaviota.com/climatika"
-              left
               selectorId="climatika"
               img="climatika.png"
               text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
@@ -102,17 +102,18 @@ const Projects = () => {
               name="Dvinum"
               url="https://app.dvinum.es/id/Sv6raUSulwRS3DN5MgBAnMHUhex2"
               selectorId="dvinum"
+              left
               img="dvinum.jpeg"
               text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             />
             <div className="trigger-4"></div>
-            <DesktopProjectB
+            {/* <DesktopProjectB
               stack={["React", "React Native", "Firebase"]}
               name="Mesa Premium"
               left
               img="mesap.png"
               text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
-            />
+            /> */}
           </article>
         </div>
         {/* mobile content */}
