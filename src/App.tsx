@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./sections/Header";
 import Projects from "./sections/Projects";
 import Resume from "./sections/Resume";
-import Techstack from "./sections/Techstack";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
@@ -59,16 +58,12 @@ function App() {
     <>
       <ColorContext.Provider value={{ activeColor: color, setColor: setColor }}>
         <main id="main-box" className="relative">
-          {/* <div
-            id="box-effect"
-            className="fixed bottom-0 w-screen h-screen bg-black-soft z-[20]"
-          ></div> */}
           <Navbar />
           <BackgroundCanvas />
           <Header />
           <AboutMe />
           <Projects />
-          <Techstack />
+          <div className=" relative w-full h-72 backdrop-invert bg-[#949596]/20"></div>
           <Resume />
         </main>
       </ColorContext.Provider>

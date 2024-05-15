@@ -47,7 +47,6 @@ const BackgroundCanvas = () => {
         fragmentShader: fragmentShader,
         side: THREE.DoubleSide,
       });
-      console.log(geometry.attributes.uv);
       material.uniforms = {
         uTime: {
           value: 0,

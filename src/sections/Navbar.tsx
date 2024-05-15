@@ -15,7 +15,6 @@ const Navbar = () => {
           scrub: true,
           onUpdate: (self) => {
             const progress = self.progress;
-            console.log(progress);
             if (progress > 0.9) {
               gsap.to("#header-career", {
                 color: "#141516",
@@ -61,7 +60,7 @@ const Navbar = () => {
         <p
           id="header-nav-name"
           style={{ fontWeight: 900, fontSize: "9.7vw" }}
-          className="absolute w-full font-interText tracking-wide uppercase  text-white-bone text-center "
+          className="absolute w-full font-interText tracking-wide uppercase select-none text-white-bone text-center "
         >
           Juan Urdaneta
         </p>

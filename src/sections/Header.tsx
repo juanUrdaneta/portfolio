@@ -62,9 +62,11 @@ const Header = () => {
           <ProjectCTA name="Dvinum" pic="dvinum.jpeg" />
         </section>
         <div className="flex justify-center items-start h-16 ">
-          <button className="w-64 h-12 text-black-soft transition-all duration-500 rounded-xl bg-white-bone hover:bg-white-bone/80 ">
-            <a href="mailto:urdntjuan@gmail.com">Let's work together!</a>
-          </button>
+          <a href="mailto:urdntjuan@gmail.com">
+            <button className="w-64 h-12 text-black-soft transition-all duration-500 rounded-xl bg-white-bone hover:bg-white-bone/80 ">
+              Let's work together!
+            </button>
+          </a>
         </div>
       </div>
       {/* <div
