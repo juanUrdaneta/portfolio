@@ -53,21 +53,23 @@ const Navbar = () => {
       // style={{ backgroundColor: "#141516" }}
       className="w-screen h-20 fixed top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-md max-[1600px]:px-8 "
     >
-      <nav className="relative flex justify-between items-center w-[1600px] max-w-screen">
-        <p id="header-career" className="uppercase font-interText text-white-bone">
-          Software engineer / Creative Developer
-        </p>
-        <p
-          id="header-nav-name"
-          style={{ fontWeight: 900, fontSize: "9.7vw" }}
-          className="absolute w-full font-interText tracking-wide uppercase select-none text-white-bone text-center "
-        >
-          Juan Urdaneta
-        </p>
-        <p id="header-email" className="font-interText text-white-bone ">
+      <nav className="relative flex flex-row-reverse justify-between items-center w-[1600px] max-w-screen">
+        <p id="header-email" className="font-interText text-white-bone hidden md:flex ">
           <a className="decoration" href="mailto:urdntjuan@gmail.com">
             urdntjuan@gmail.com
           </a>
+        </p>
+        <p
+          id="header-nav-name"
+          className="absolute w-full font-interText font-extrabold max-[930px]:text-7xl max-[1210px]:text-8xl text-9xl tracking-wide uppercase select-none text-white-bone text-left md:text-center "
+        >
+          Juan Urdaneta
+        </p>
+        <p
+          id="header-career"
+          className="uppercase font-interText text-white-bone hidden min-[1100px]:flex"
+        >
+          Software engineer / Creative Developer
         </p>
       </nav>
     </div>

@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       <ColorContext.Provider value={{ activeColor: color, setColor: setColor }}>
-        <main id="main-box" className="relative ">
+        <main id="main-box" className="relative">
           <Navbar />
           <BackgroundCanvas />
           <Header />

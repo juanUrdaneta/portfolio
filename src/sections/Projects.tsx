@@ -49,10 +49,10 @@ const Projects = () => {
     <>
       <div
         id="projects"
-        className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent max-[1600px]:px-8"
+        className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent max-[1600px]:px-8 mt-10 md:mt-0"
       >
         <div className="w-full flex justify-start items-center max-w-[1600px] ">
-          <h2 className="font-inter text-8xl mb-24 text-left select-none uppercase">
+          <h2 className="font-inter font-semibold text-5xl md:text-8xl mb-10 md:mb-24 text-left select-none uppercase">
             Recent <br />
             <span className="pl-24">Projects</span>
           </h2>
@@ -117,20 +117,12 @@ const Projects = () => {
           </article>
         </div>
         {/* mobile content */}
-        <article className="mb-2 mt-8 w-full max-w-[1200px] pt-20 block lg:hidden ">
+        <article className="mb-2 w-full max-w-[1200px] block lg:hidden ">
           <Project
             name="Shortbread.ai Engine"
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             imgSrc="shortbread.jpeg"
             order={1}
-          />
-          <Project
-            name="GrocerSave App"
-            text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
-            Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
-            imgSrc="N/A"
-            order={2}
-            grocer
           />
           <Project
             name="Incept Landing Page"
@@ -150,12 +142,6 @@ const Projects = () => {
             imgSrc="dvinum.jpeg"
             order={5}
           />
-          <Project
-            name="Mesa Premium"
-            text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
-            imgSrc="mesap.png"
-            order={6}
-          />
         </article>
       </div>
       {/* end mobile content */}
@@ -174,7 +160,7 @@ const Project = (props: {
 }) => {
   return (
     <div
-      className={`flex w-full h-full flex-col justify-center items-center  mt-10 z-[${props.order}] `}
+      className={`flex w-full h-full flex-col justify-center items-center mb-10 z-[${props.order}] `}
     >
       <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
         {props.grocer ? (
@@ -190,9 +176,9 @@ const Project = (props: {
         )}
       </div>
       <div className="flex w-full flex-col items-center justify-center">
-        <p className="text-black-soft font-openSans text-2xl italic text-center ">{props.name}</p>
+        <p className="text-black-soft font-inter text-3xl text-center ">{props.name}</p>
         <div className="p-6">
-          <p className="text-black-soft max-w-[500px] font-openSans text-center italic text-sm">
+          <p className="text-black-soft max-w-[500px] font-inter text-center text-sm">
             {props.text}
           </p>
         </div>
@@ -222,30 +208,30 @@ const DesktopProjectB = (props: {
   return (
     <div
       id={props.selectorId + "-selector"}
-      className={`flex justify-center w-full h-[80vh] ${props.left ? "flex-row-reverse" : ""}`}
+      className={`flex justify-center w-full h-[75vh] max-h-[800px] ${
+        props.left ? "flex-row-reverse" : ""
+      }`}
     >
-      <div className="relative w-7/12">
-        <div className="overflow-hidden shadow-xl mb-4 rounded">
+      <div className="relative w-7/12 h-full">
+        <div className="relative overflow-hidden shadow-xl mb-4 rounded h-[60%]">
           <img
             src={props.img}
             alt="img"
-            className={`max-w-[60vw] w-full h-[60vh] object-cover  hover:scale-105 transition-all duration-500`}
+            className={`w-full h-full object-cover  hover:scale-105 transition-all duration-500`}
           />
         </div>
-        <p className="text-black-soft font-inter font-thin text-left max-w-[90%] text-md ">
+        <p className="text-black-soft font-inter font-light text-left max-w-[90%] text-md ">
           {props.text}
         </p>
       </div>
       <div
-        className={`px-14 w-5/12 h-[60vh] flex justify-end  ${
+        className={`px-14 w-5/12 h-[60%] flex justify-end  ${
           props.left ? "items-end" : " items-start"
         } flex-col`}
       >
-        <p className="text-black-soft/70 mb-6 font-openSans select-none">
-          {props.stack.join(" - ")}
-        </p>
+        <p className="text-black-soft/70 mb-6 font-inter select-none">{props.stack.join(" - ")}</p>
         <p
-          className={`text-black-soft mb-8 font-inter font-light text-8xl ${
+          className={`text-black-soft mb-8 font-inter font-light max-[1400px]:text-6xl text-8xl ${
             props.left ? "text-right" : "text-left"
           } name-trigger`}
         >
