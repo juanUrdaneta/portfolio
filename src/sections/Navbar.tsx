@@ -51,7 +51,7 @@ const Navbar = () => {
     <div
       id="navbar"
       // style={{ backgroundColor: "#141516" }}
-      className="w-screen h-20 fixed top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-md "
+      className="w-screen h-20 fixed top-0 z-50 mt-[-1px] flex justify-center backdrop-blur-md max-[1600px]:px-8 "
     >
       <nav className="relative flex justify-between items-center w-[1600px] max-w-screen">
         <p id="header-career" className="uppercase font-interText text-white-bone">

@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div
       id="header"
-      className="relative w-screen h-screen  flex flex-col justify-start overflow-hidden z-10  bg-black-soft"
+      className="relative w-screen h-screen  flex flex-col justify-start overflow-hidden z-10  bg-black-soft max-[1600px]:px-8"
     >
       <div id="header-content" className="w-full h-full flex justify-center items-center flex-col">
         <section className="w-full flex flex-col md:flex-row justify-center md:items-center ">

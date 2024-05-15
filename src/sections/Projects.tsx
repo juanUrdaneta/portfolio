@@ -49,7 +49,7 @@ const Projects = () => {
     <>
       <div
         id="projects"
-        className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent "
+        className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent max-[1600px]:px-8"
       >
         <div className="w-full flex justify-start items-center max-w-[1600px] ">
           <h2 className="font-inter text-8xl mb-24 text-left select-none uppercase">
