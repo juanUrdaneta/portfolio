@@ -53,7 +53,7 @@ function App() {
           <BackgroundCanvas />
           <Header
             scrollTo={(selector: string) => {
-              localLenis?.scrollTo(selector);
+              localLenis?.scrollTo(selector, { offset: -200 });
             }}
           />
           <AboutMe />

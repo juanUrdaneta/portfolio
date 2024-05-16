@@ -21,6 +21,7 @@ const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
       { opacity: 0 },
       {
         duration: 1.2,
+        delay: 1.2,
         opacity: 1,
         ease: "sine.in",
       }
