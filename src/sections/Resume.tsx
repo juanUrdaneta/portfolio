@@ -36,7 +36,7 @@ const Resume = () => {
               id="cat-pic"
               className="rounded-md overflow-hidden shadow-lg hover:scale-105 transition-all duration-300"
             >
-              <img src="mulata.jpg" loading="lazy" className="w-[320px] h-[560px] object-cover" />
+              <img src="mulata.webp" loading="lazy" className="w-[320px] h-[560px] object-cover" />
             </div>
           </div>
         </div>
