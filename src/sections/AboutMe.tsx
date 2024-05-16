@@ -24,7 +24,7 @@ const AboutMe = () => {
     });
   }, []);
   return (
-    <div className=" relative h-[90vh] max-h-[1400px] w-screen flex">
+    <div className=" relative h-[70vh] md:h-[90vh] max-h-[1400px] w-screen flex">
       <div className="w-full flex">
         <div
           id="about-me-one"
@@ -32,17 +32,17 @@ const AboutMe = () => {
         >
           <div className="w-full md:w-7/12 h-full flex flex-col justify-center items-center px-12 ">
             <h3 className="text-lg md:text-5xl font-inter font-extrabold mb-10">Hi there!</h3>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
-              <span className="fo nt-bold">Pixel perfect</span> software engineer based in Buenos
+            <p className="text-md md:text-4xl text-center font-inter font-light mb-8 md:mb-16">
+              <span className="font-bold">Pixel perfect</span> software engineer based in Buenos
               Aires.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-light mb-8 md:mb-16">
               Experienced in React, Next.js, AWS and a bunch of cool tech.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-light mb-8 md:mb-16">
               Passionate about turning great ideas into great products.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-light mb-8 md:mb-16">
               Problem-solving oriented, naturally curious, continually growing.
             </p>
           </div>
