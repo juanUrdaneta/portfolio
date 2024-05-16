@@ -16,7 +16,6 @@ const Resume = () => {
         scrollTrigger: {
           trigger: `#resume-content`,
           start: "10% 20%",
-          markers: true,
         },
       }
     );
