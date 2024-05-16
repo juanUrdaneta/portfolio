@@ -43,16 +43,6 @@ function App() {
         });
       },
     });
-    gsap.fromTo(
-      "#name-box",
-      { opacity: 0 },
-      {
-        opacity: 1,
-        delay: 0.6,
-        duration: 2,
-        ease: "sine.out",
-      }
-    );
   }, []);
 
   return (

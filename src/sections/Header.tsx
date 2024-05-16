@@ -16,6 +16,24 @@ const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
         scrub: true,
       },
     });
+    gsap.fromTo(
+      "#header-content",
+      { opacity: 0 },
+      {
+        duration: 1.2,
+        opacity: 1,
+        ease: "sine.in",
+      }
+    );
+    gsap.fromTo(
+      "#navbar",
+      { opacity: 0 },
+      {
+        duration: 1.2,
+        opacity: 1,
+        ease: "sine.in",
+      }
+    );
     // gsap.to("#scroll-down-indicator", {
     //   y: "100vh",
     //   ease: "linear",
@@ -50,10 +68,7 @@ const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
             My recent Projects
           </h2>
         </div>
-        <section
-          id="cta"
-          className="flex flex-grow w-full max-w-[1600px] justify-center pb-2 gap-5"
-        >
+        <section className="flex flex-grow w-full max-w-[1600px] justify-center pb-2 gap-5">
           <ProjectCTA
             onClick={() => scrollTo("#shortbread-selector")}
             name="Shortbread AI"
