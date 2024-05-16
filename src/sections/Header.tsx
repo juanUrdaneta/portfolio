@@ -73,18 +73,18 @@ const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
           <ProjectCTA
             onClick={() => scrollTo("#shortbread-selector")}
             name="Shortbread AI"
-            pic="shortbread.jpeg"
+            pic="shortbread.webp"
           />
           <ProjectCTA
             onClick={() => scrollTo("#climatika-selector")}
             name="Climatika"
-            pic="climatika.png"
+            pic="climatika.webp"
             cn="hidden min-[800px]:flex"
           />
           <ProjectCTA
             onClick={() => scrollTo("#dvinum-selector")}
             name="Dvinum"
-            pic="dvinum.jpeg"
+            pic="dvinum.webp"
             cn="hidden min-[1000px]:flex"
           />
         </section>

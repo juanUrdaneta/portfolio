@@ -55,7 +55,7 @@ const Projects = () => {
           <article className="w-full max-w-[1600px] ">
             <DesktopProjectB
               stack={["React", "Nextjs", "Tailwind"]}
-              img="shortbread.jpeg"
+              img="shortbread.webp"
               url="https://create.shortbread.ai"
               selectorId="shortbread"
               name="Shortbread.ai Engine"
@@ -66,7 +66,7 @@ const Projects = () => {
               stack={["React", "React Native", "AWS"]}
               name="GrocerSave App"
               left
-              img="shortbread.jpeg"
+              img="shortbread.webp"
               text="Developed front end features for a crowd sourced grocery list React Native App. Worked closely with the Product Manager to develop specific workflows that enabled potential power users to perform mass data update operations with a focus on data integrity and ease of use.
               Developed backend features that enabled the automation for mass product updates and allowed out backend interact with core aws services."
             /> */}
@@ -86,7 +86,7 @@ const Projects = () => {
               name="Climatika App"
               url="https://config.glassbygaviota.com/climatika"
               selectorId="climatika"
-              img="climatika.png"
+              img="climatika.webp"
               text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
             />
 
@@ -97,7 +97,7 @@ const Projects = () => {
               url="https://app.dvinum.es/id/Sv6raUSulwRS3DN5MgBAnMHUhex2"
               selectorId="dvinum"
               left
-              img="dvinum.jpeg"
+              img="dvinum.webp"
               text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             />
             <div className="trigger-4"></div>
@@ -105,7 +105,7 @@ const Projects = () => {
               stack={["React", "React Native", "Firebase"]}
               name="Mesa Premium"
               left
-              img="mesap.png"
+              img="mesap.webp"
               text="Developed a mobile app that allows businesses to manage online bookings, customer information and realtime seat availability, working closely with the design team to provide the best UI experience for our customers."
             /> */}
           </article>
@@ -115,7 +115,7 @@ const Projects = () => {
           <Project
             name="Shortbread.ai Engine"
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
-            imgSrc="shortbread.jpeg"
+            imgSrc="shortbread.webp"
             order={1}
             url="https://create.shortbread.ai"
             selectorId="shortbread"
@@ -131,7 +131,7 @@ const Projects = () => {
           <Project
             name="Climatika App"
             text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
-            imgSrc="climatika.png"
+            imgSrc="climatika.webp"
             order={4}
             url="https://config.glassbygaviota.com/climatika"
             selectorId="climatika"
@@ -139,7 +139,7 @@ const Projects = () => {
           <Project
             name="Dvinum"
             text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
-            imgSrc="dvinum.jpeg"
+            imgSrc="dvinum.webp"
             order={5}
             url="https://app.dvinum.es/id/Sv6raUSulwRS3DN5MgBAnMHUhex2"
             selectorId="dvinum"
@@ -170,7 +170,7 @@ const Project = (props: {
       <div className="rounded-lg overflow-hidden h-fit w-fit shadow-xl mb-2 z-20 ">
         {props.grocer ? (
           <div className="bg-[#659952] w-[92vw] h-full flex justify-center items-center flex-col">
-            <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
+            <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" loading="lazy" />
             <p className="text-black-soft font-archivo text-2xl text-left">Grocersave</p>
           </div>
         ) : (
@@ -227,6 +227,7 @@ const DesktopProjectB = (props: {
         <div className="relative overflow-hidden shadow-xl mb-4 rounded h-[60%]">
           <img
             src={props.img}
+            loading="lazy"
             alt="img"
             className={`w-full h-full object-cover  hover:scale-105 transition-all duration-500`}
           />
