@@ -30,7 +30,7 @@ const AboutMe = () => {
           id="about-me-one"
           className="w-full h-full flex justify-center translate-y-[25vh] opacity-0  "
         >
-          <div className="w-7/12 h-full flex flex-col justify-center items-center px-12 ">
+          <div className="w-full md:w-7/12 h-full flex flex-col justify-center items-center px-12 ">
             <h3 className="text-lg md:text-5xl font-inter font-extrabold mb-10">Hi there!</h3>
             <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
               <span className="fo nt-bold">Pixel perfect</span> software engineer based in Buenos

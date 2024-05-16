@@ -44,10 +44,10 @@ const Projects = () => {
         <div className="w-full h-48 flex justify-start items-center max-w-[1600px] overflow-hidden  mb-10 md:mb-24">
           <h2
             id="recent-title"
-            className="font-inter font-semibold text-3xl md:text-8xl  text-left select-none uppercase"
+            className="font-inter font-semibold text-4xl md:text-8xl  text-left select-none uppercase"
           >
             Recent <br />
-            <span className="pl-24">Projects</span>
+            <span className="pl-8 md:pl-24">Projects</span>
           </h2>
         </div>
         <div className="hidden lg:flex w-full justify-center ">
@@ -156,7 +156,7 @@ const Project = (props: {
     <div
       className={`flex w-full h-full flex-col justify-center items-center mb-10 z-[${props.order}] `}
     >
-      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 z-20 ">
+      <div className="rounded-lg overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 z-20 ">
         {props.grocer ? (
           <div className="bg-[#659952] w-[92vw] h-full flex justify-center items-center flex-col">
             <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
@@ -170,9 +170,11 @@ const Project = (props: {
         )}
       </div>
       <div className="flex w-full flex-col items-center justify-center z-10">
-        <p className="text-black-soft font-inter text-3xl text-center ">{props.name}</p>
+        <p className="text-black-soft font-inter font-light mt-2 text-3xl text-center ">
+          {props.name}
+        </p>
         <div className="p-6">
-          <p className="text-black-soft max-w-[500px] font-inter text-center text-sm">
+          <p className="text-black-soft/60 max-w-[500px] font-inter text-left text-sm">
             {props.text}
           </p>
         </div>

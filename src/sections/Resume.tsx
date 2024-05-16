@@ -42,14 +42,14 @@ const Resume = () => {
         </div>
         <div
           id="lets-talk"
-          className="w-full h-full flex flex-col lg:flex-row justify-start items-center gap-12 mb-24 "
+          className="w-full  h-full flex flex-col lg:flex-row justify-start items-center gap-12 mb-8 md:mb-24"
         >
-          <h2 className="font-inter font-semibold text-3xl md:text-8xl  mb-12 text-left select-none uppercase">
+          <h2 className="font-inter font-semibold text-3xl md:text-8xl  mb-0 text-left select-none uppercase">
             Let's get <br />
-            <span className="pl-20">Talking!</span>
+            <span className="pl-8 md:pl-20">Talking!</span>
           </h2>
-          <div className="w-full lg:w-1/2 flex flex-col ">
-            <p className="text-xl text-left font-inter font-light mb-12">
+          <div className=" w-full lg:w-1/2 flex flex-col ">
+            <p className="text-xl text-left font-inter font-light mb-2 md:mb-12">
               Want to work together or looking for an engenieer to join the team? Let’s talk.
             </p>
             <div className="flex justify-center lg:justify-start items-start h-16">
