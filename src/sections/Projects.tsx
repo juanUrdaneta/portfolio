@@ -117,6 +117,7 @@ const Projects = () => {
             text="Developed a Webtoon / Webcomics editing experience from scratch that enables users to create and edit webcomics  working closely with the product designer to create a scalable and robust architecture that would guarantee the product to grow without compromising core features. Worked on integrating backend APIs that generated / enhanced / edited images with AI generative models."
             imgSrc="shortbread.jpeg"
             order={1}
+            url="https://create.shortbread.ai"
             selectorId="shortbread"
           />
           <Project
@@ -124,6 +125,7 @@ const Projects = () => {
             text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             imgSrc="incept.webp"
             order={3}
+            url="https://incept-landing-git-main-anemolo.vercel.app/"
             selectorId="incept"
           />
           <Project
@@ -131,6 +133,7 @@ const Projects = () => {
             text="Developed an interactive control system for the product Climatika (a self supporting pergola product from the company Glass) that allowed users to update a 3d model of the product in real time. Worked closely with a WebGL developer to integrate both systems and with UX/UI Designers as well."
             imgSrc="climatika.png"
             order={4}
+            url="https://config.glassbygaviota.com/climatika"
             selectorId="climatika"
           />
           <Project
@@ -138,6 +141,7 @@ const Projects = () => {
             text="Refined an old mobile first, web app so it could bring new types of customers further improving usability, responsiveness, design, business growth and scalability. Diagnosed and refactored most of the data fetching pipeline and improved load times and app responsiveness overall."
             imgSrc="dvinum.jpeg"
             order={5}
+            url="https://app.dvinum.es/id/Sv6raUSulwRS3DN5MgBAnMHUhex2"
             selectorId="dvinum"
           />
         </article>
@@ -155,6 +159,7 @@ const Project = (props: {
   imgSrc: string;
   order: number;
   grocer?: boolean;
+  url?: string;
   selectorId?: string;
 }) => {
   return (
@@ -179,11 +184,17 @@ const Project = (props: {
         <p className="text-black-soft font-inter font-light mt-2 text-3xl text-left mb-2">
           {props.name}
         </p>
-        <p className="text-black-soft/60 max-w-[500px] font-inter text-left text-sm">
+        <p className="text-black-soft/60 max-w-[500px] font-inter text-left text-sm mb-2">
           {props.text}
         </p>
       </div>
-      <hr className="border-black-soft mx-4 opacity-20" />
+      <div className="flex w-full justify-end">
+        <a target="_blank" href={props.url}>
+          <button className="w-24 h-12 bg-black-soft transition-all rounded-xl text-white-bone">
+            See live
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
