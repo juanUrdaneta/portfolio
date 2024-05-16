@@ -8,39 +8,18 @@ const AboutMe = () => {
       ease: "sine.out",
       duration: 0.8,
       scrollTrigger: {
-        trigger: "#name-box",
-        start: "top top",
-        // scrub: true,
+        trigger: "#header",
+        start: "bottom center",
       },
     });
-    gsap.to("#about-me-two", {
-      opacity: 1,
-      ease: "sine.out",
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: "#name-box",
-        start: "top top",
-        // scrub: true,
-      },
-    });
+
     gsap.to("#about-me-one", {
       y: 0,
       ease: "power4.out",
       duration: 1.2,
       scrollTrigger: {
-        trigger: "#name-box",
-        start: "top top",
-        // scrub: true,
-      },
-    });
-    gsap.to("#about-me-two", {
-      y: 0,
-      ease: "power4.out",
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: "#name-box",
-        start: "top top",
-        // scrub: true,
+        trigger: "#header",
+        start: "bottom center",
       },
     });
   }, []);
@@ -53,17 +32,17 @@ const AboutMe = () => {
         >
           <div className="w-7/12 h-full flex flex-col justify-center items-center px-12 ">
             <h3 className="text-lg md:text-5xl font-inter font-extrabold mb-10">Hi there!</h3>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
               <span className="fo nt-bold">Pixel perfect</span> software engineer based in Buenos
               Aires.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
               Experienced in React, Next.js, AWS and a bunch of cool tech.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
               Passionate about turning great ideas into great products.
             </p>
-            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 mb-16">
+            <p className="text-md md:text-4xl text-center font-inter font-thin mb-8 md:mb-16">
               Problem-solving oriented, naturally curious, continually growing.
             </p>
           </div>

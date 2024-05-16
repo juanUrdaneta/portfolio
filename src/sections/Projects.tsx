@@ -1,47 +1,37 @@
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
+const PROJECTS = ["shortbread", "incept", "climatika", "dvinum"];
 
 const Projects = () => {
   useGSAP(() => {
-    const photos = gsap.utils.toArray(".desktop-image:not(:first-child)");
-    const photosObj = gsap.utils.toArray(".desktop-image-obj").slice(1);
-    const details = gsap.utils.toArray(".desktop-detail");
-    const allPhotos = gsap.utils.toArray(".desktop-image");
-    gsap.set(photos, { yPercent: 100 });
-    gsap.set(photosObj, { yPercent: -100 });
-
-    details.forEach((_, index) => {
-      const animation = gsap
-        .timeline()
-        .to(photos[index] as gsap.TweenTarget, { yPercent: 0 })
-        .set(allPhotos[index] as gsap.TweenTarget, { autoAlpha: 0 });
-
-      ScrollTrigger.create({
-        trigger: `.trigger-${index}`,
-        start: "center 99%",
-        end: "bottom 1%",
-        animation: animation,
-        scrub: true,
-      });
-    });
-    details.forEach((_, index) => {
-      const animation = gsap.timeline().to(photosObj[index] as gsap.TweenTarget, { yPercent: 0 });
-      ScrollTrigger.create({
-        trigger: `.trigger-${index}`,
-        start: "center 99%",
-        end: "bottom 1%",
-        animation: animation,
-        scrub: true,
-      });
-    });
-    gsap.to("#projects", {
-      scrollTrigger: {
-        trigger: "#projects",
-        pin: "#project-images",
-        start: "top top",
-        end: "bottom bottom",
-      },
+    gsap.fromTo(
+      `#recent-title`,
+      { y: 200 },
+      {
+        y: 0,
+        ease: "power2.out",
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: `#projects`,
+          start: "top 90%",
+        },
+      }
+    );
+    PROJECTS.forEach((project, index) => {
+      gsap.fromTo(
+        `#${project}-selector-name`,
+        { x: index % 2 ? 420 : -420 },
+        {
+          x: 0,
+          ease: "power2.out",
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: `#${project}-selector`,
+            start: "top 70%",
+          },
+        }
+      );
     });
   }, []);
 
@@ -51,8 +41,11 @@ const Projects = () => {
         id="projects"
         className="relative z-20 flex min-h-screen w-screen flex-col items-center justify-center bg-transparent max-[1600px]:px-8 mt-10 md:mt-0"
       >
-        <div className="w-full flex justify-start items-center max-w-[1600px] ">
-          <h2 className="font-inter font-semibold text-3xl md:text-8xl mb-10 md:mb-24 text-left select-none uppercase">
+        <div className="w-full h-48 flex justify-start items-center max-w-[1600px] overflow-hidden  mb-10 md:mb-24">
+          <h2
+            id="recent-title"
+            className="font-inter font-semibold text-3xl md:text-8xl  text-left select-none uppercase"
+          >
             Recent <br />
             <span className="pl-24">Projects</span>
           </h2>
@@ -84,6 +77,7 @@ const Projects = () => {
               left
               url="https://incept-landing-git-main-anemolo.vercel.app/"
               img="incept.webp"
+              selectorId="incept"
               text="Developed a responsive pixel-perfect website, assisted a webgl developer to ensure the component structure to fit the needs for three.js to run and adjust properly to the end design."
             />
             <div className="trigger-2"></div>
@@ -162,7 +156,7 @@ const Project = (props: {
     <div
       className={`flex w-full h-full flex-col justify-center items-center mb-10 z-[${props.order}] `}
     >
-      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 ">
+      <div className="rounded overflow-hidden h-fit w-fit shadow-xl mx-4 mb-2 z-20 ">
         {props.grocer ? (
           <div className="bg-[#659952] w-[92vw] h-full flex justify-center items-center flex-col">
             <img src={"grocer.svg"} alt="img" className="w-[200px] h-auto" />
@@ -175,7 +169,7 @@ const Project = (props: {
           />
         )}
       </div>
-      <div className="flex w-full flex-col items-center justify-center">
+      <div className="flex w-full flex-col items-center justify-center z-10">
         <p className="text-black-soft font-inter text-3xl text-center ">{props.name}</p>
         <div className="p-6">
           <p className="text-black-soft max-w-[500px] font-inter text-center text-sm">
@@ -208,11 +202,11 @@ const DesktopProjectB = (props: {
   return (
     <div
       id={props.selectorId + "-selector"}
-      className={`flex justify-center w-full h-[75vh] max-h-[800px] ${
+      className={`desktop-project flex justify-center w-full h-[75vh] max-h-[800px] ${
         props.left ? "flex-row-reverse" : ""
       }`}
     >
-      <div className="relative w-7/12 h-full">
+      <div className="relative w-7/12 h-full z-20">
         <div className="relative overflow-hidden shadow-xl mb-4 rounded h-[60%]">
           <img
             src={props.img}
@@ -225,7 +219,8 @@ const DesktopProjectB = (props: {
         </p>
       </div>
       <div
-        className={`px-14 w-5/12 h-[60%] flex justify-end  ${
+        id={`${props.selectorId}-selector-name`}
+        className={`px-14 w-5/12 z-10 h-[60%] flex justify-end  ${
           props.left ? "items-end" : " items-start"
         } flex-col`}
       >
