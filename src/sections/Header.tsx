@@ -5,16 +5,20 @@ import React from "react";
 const Header = ({ scrollTo }: { scrollTo: (selector: string) => void }) => {
   useGSAP(() => {
     // recurrent
-    gsap.to("#header-content", {
-      y: "80vh",
-      opacity: 0.4,
-      scale: 0.9,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: "#header",
-        start: "top top",
-        scrub: true,
-      },
+
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 600px)", () => {
+      gsap.to("#header-content", {
+        y: "80vh",
+        opacity: 0.4,
+        scale: 0.9,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: "#header",
+          start: "top top",
+          scrub: true,
+        },
+      });
     });
     gsap.fromTo(
       "#header-content",

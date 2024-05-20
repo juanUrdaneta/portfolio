@@ -3,49 +3,97 @@ import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
   useGSAP(() => {
-    gsap.fromTo(
-      "#header-nav-name",
-      { y: "7rem" },
-      {
-        y: 0,
-        fontSize: "2rem",
-        scrollTrigger: {
-          trigger: "#header",
-          start: "top top",
-          scrub: true,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            if (progress > 0.9) {
-              gsap.to("#header-career", {
-                color: "#141516",
-              });
-              gsap.to("#header-email", {
-                color: "#141516",
-              });
-              gsap.to("#header-nav-name", {
-                color: "#141516",
-              });
-              gsap.to("#navbar", {
-                backgroundColor: "rgba(249,246,238,0.6)",
-              });
-            } else {
-              gsap.to("#header-career", {
-                color: "#f9f6ee",
-              });
-              gsap.to("#header-email", {
-                color: "#f9f6ee",
-              });
-              gsap.to("#header-nav-name", {
-                color: "#f9f6ee",
-              });
-              gsap.to("#navbar", {
-                backgroundColor: "#141516",
-              });
-            }
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 600px)", () => {
+      gsap.fromTo(
+        "#header-nav-name",
+        { y: "7rem" },
+        {
+          y: 0,
+          fontSize: "2rem",
+          scrollTrigger: {
+            trigger: "#header",
+            start: "top top",
+            scrub: true,
+            onUpdate: (self) => {
+              const progress = self.progress;
+              if (progress > 0.9) {
+                gsap.to("#header-career", {
+                  color: "#141516",
+                });
+                gsap.to("#header-email", {
+                  color: "#141516",
+                });
+                gsap.to("#header-nav-name", {
+                  color: "#141516",
+                });
+                gsap.to("#navbar", {
+                  backgroundColor: "rgba(249,246,238,0.6)",
+                });
+              } else {
+                gsap.to("#header-career", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#header-email", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#header-nav-name", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#navbar", {
+                  backgroundColor: "#141516",
+                });
+              }
+            },
           },
-        },
-      }
-    );
+        }
+      );
+    });
+    mm.add("(max-width: 600px)", () => {
+      gsap.fromTo(
+        "#header-nav-name",
+        { y: "7rem" },
+        {
+          y: 0,
+          fontSize: "2rem",
+          scrollTrigger: {
+            trigger: "#header-nav-name",
+            start: "top top",
+            scrub: true,
+            onUpdate: (self) => {
+              const progress = self.progress;
+              if (progress > 0.9) {
+                gsap.to("#header-career", {
+                  color: "#141516",
+                });
+                gsap.to("#header-email", {
+                  color: "#141516",
+                });
+                gsap.to("#header-nav-name", {
+                  color: "#141516",
+                });
+                gsap.to("#navbar", {
+                  backgroundColor: "rgba(249,246,238,0.6)",
+                });
+              } else {
+                gsap.to("#header-career", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#header-email", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#header-nav-name", {
+                  color: "#f9f6ee",
+                });
+                gsap.to("#navbar", {
+                  backgroundColor: "#141516",
+                });
+              }
+            },
+          },
+        }
+      );
+    });
   }, []);
   return (
     <div
