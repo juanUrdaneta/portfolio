@@ -57,9 +57,10 @@ const Navbar = () => {
           y: 0,
           fontSize: "2rem",
           scrollTrigger: {
-            trigger: "#header-nav-name",
+            trigger: "#navbar",
             start: "top top",
             scrub: true,
+            markers: true,
             onUpdate: (self) => {
               const progress = self.progress;
               if (progress > 0.9) {
