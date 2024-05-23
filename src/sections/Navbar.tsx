@@ -60,7 +60,6 @@ const Navbar = () => {
             trigger: "#navbar",
             start: "top top",
             scrub: true,
-            markers: true,
             onUpdate: (self) => {
               const progress = self.progress;
               if (progress > 0.9) {
